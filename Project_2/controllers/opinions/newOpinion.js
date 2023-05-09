@@ -1,37 +1,25 @@
-const { getConnection } = require("../../db/db");
-const { generateError } = require("../../helpers");
+const { generateError } = require("../../generateError");
+const { queryNewOpinion } = require("../queryOpinions/QuerynewOpinion");
 
-async function newOpinionController(req, res, next) {
-  let connection;
+const newOpinionControler = async (req, res, next) => {
   try {
-    connection = await getConnection();
-
-    const { text } = req.body;
-
-    if (!text || text.length > 65535) {
-      throw generateError(
-        "El campo de texto es obligatorio y debe ser como máximo de 65535 caracteres",
-        400
-      );
+    const { userId, text, image } = req.body;
+    // Añadir npm JOI para validar email y password
+    if (!text || !image) {
+      throw generateError("Insert a valid opinion", 404);
     }
-    const [result] = await connection.query(
-      `
-    INSERT INTO opinions(opinion_id, text, created-at) VALUES (?,?,UTC_TIMESTAMP)
-    `,
-      [req.auth.opinion_id, text]
-    );
+
+    const id = await queryNewOpinion(userId, text, image);
+
     res.send({
       status: "ok",
-      data: {
-        id: result.opinion_id,
-        text,
-      },
+      message: `your opinion was succesfully posted: ${id}`,
     });
   } catch (error) {
     next(error);
-  } finally {
-    if (connection) connection.release();
   }
-}
+};
 
-module.exports = { newOpinionController };
+module.exports = {
+  newOpinionControler,
+};
