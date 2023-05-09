@@ -5,8 +5,8 @@ const { getConnection } = require("./db");
 async function connectCreate() {
   let connection;
   try {
-    console.log("eseeeeee");
     connection = await getConnection();
+    console.log("eseeeeee");
     /// Borramos la tabla si existe
     await connection.query(`DROP TABLE IF EXISTS opinions`);
     await connection.query(`DROP TABLE IF EXISTS users`);
