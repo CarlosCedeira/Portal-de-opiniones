@@ -1,0 +1,11 @@
+validar estructura de email y pasword con JOI
+
+Pasar id por jwtoken para la creacion de opiniones y actualizar usuario
+
+Que aparezca la opinion en vez de object object
+
+Revisar control de errores
+
+Inner join para obtener las opiniones
+
+revisar sintaxis general XD
