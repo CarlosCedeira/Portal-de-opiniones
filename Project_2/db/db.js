@@ -10,11 +10,11 @@ const getConnection = async () => {
       connectionLimit: 10,
       host: HOST,
       user: USER,
-      password: PASSWORD,
       database: DATABASE,
       timezone: "Z",
     });
   }
+  console.log("ese");
   return await pool.getConnection();
 };
 module.exports = { getConnection };

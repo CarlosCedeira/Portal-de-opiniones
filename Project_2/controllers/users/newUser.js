@@ -3,13 +3,13 @@ const { queryNewUser } = require("../../db/createUser");
 
 const newUserControler = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
+    const { username, email, password } = req.body;
     // Añadir npm JOI para validar email y password
     if (!email || !password) {
       throw generateError("Email or password invalid", 404);
     }
 
-    const id = await queryNewUser(email, password);
+    const id = await queryNewUser(username, email, password);
 
     res.send({
       status: "ok",

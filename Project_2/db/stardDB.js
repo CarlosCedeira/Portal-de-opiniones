@@ -4,8 +4,8 @@ const { getConnection } = require("./db");
 
 async function connectCreate() {
   let connection;
-
   try {
+    console.log("eseeeeee");
     connection = await getConnection();
     /// Borramos la tabla si existe
     await connection.query(`DROP TABLE IF EXISTS opinions`);
@@ -35,4 +35,6 @@ async function connectCreate() {
     process.exit();
   }
 }
-connectCreate();
+module.exports = { connectCreate };
+//console.log("mecago en todo");
+//connectCreate();
