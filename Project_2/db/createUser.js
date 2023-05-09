@@ -1,4 +1,4 @@
-const bcript = require("bcrypt");
+const bcrypt = require("bcrypt");
 const { getConnection } = require("./db");
 const { generateError } = require("../generateError");
 
@@ -14,17 +14,17 @@ const queryNewUser = async (username, email, password) => {
     );
 
     if (user.length > 0) {
-      throw generetareError("User exist ", 409);
+      throw generateError("User exist ", 409);
     }
     // Encriptar la password
     const passwordEncript = await bcrypt.hash(password, 10);
 
     // Crearon query para el susuario nuevo
     const [newUser] = await connection.query(
-      `INSER INTO user (email, password) VALUES (?, ?)`,
-      [email, passwordEncript]
+      `INSERT INTO users (user_name, email, pasword) VALUES (?, ?, ?)`,
+      [username, email, passwordEncript]
     );
-    return newUser.insertid;
+    return newUser.insertId;
   } finally {
     if (connection) connection.release();
   }

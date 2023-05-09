@@ -2,6 +2,7 @@ require("dotenv").config();
 const morgan = require("morgan");
 
 const { newUserControler } = require("./controllers/users/newUser");
+const { connectCreate } = require("./db/stardDB");
 
 const express = require("express");
 const app = express();
