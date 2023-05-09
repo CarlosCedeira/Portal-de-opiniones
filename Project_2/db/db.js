@@ -1,6 +1,6 @@
 const mysql = require("mysql2/promise");
 
-const { HOST, USER, PASSWORD, DATABASE } = process.env;
+const { HOST, USER, DATABASE } = process.env;
 
 let pool;
 

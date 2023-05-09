@@ -2,6 +2,7 @@ require("dotenv").config();
 const morgan = require("morgan");
 
 const { newUserControler } = require("./controllers/users/newUser");
+const { updateUserControler } = require("./controllers/users/updateuser");
 const { connectCreate } = require("./db/stardDB");
 
 const express = require("express");
@@ -11,6 +12,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.post("/user", newUserControler);
+app.put("/user", updateUserControler);
 
 // Middleware de 404
 
