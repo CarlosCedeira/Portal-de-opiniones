@@ -32,7 +32,7 @@ async function connectCreate() {
     console.error(error);
   } finally {
     if (connection) connection.release();
-    process.exit();
+    //process.exit();
   }
 }
 connectCreate();
