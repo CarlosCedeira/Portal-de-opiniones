@@ -35,6 +35,4 @@ async function connectCreate() {
     process.exit();
   }
 }
-module.exports = { connectCreate };
-//console.log("mecago en todo");
-//connectCreate();
+connectCreate();
