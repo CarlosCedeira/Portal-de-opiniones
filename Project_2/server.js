@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const { newUserControler } = require("./controllers/users/newUser");
 const { updateUserControler } = require("./controllers/users/updateuser");
 const { newOpinionControler } = require("./controllers/opinions/newOpinion");
+const { getOpinionControler } = require("./controllers/opinions/getOpinion");
 const { connectCreate } = require("./db/stardDB");
 
 const express = require("express");
@@ -16,6 +17,7 @@ app.post("/user", newUserControler);
 app.put("/user", updateUserControler);
 
 app.post("/opinion", newOpinionControler);
+app.get("/opinion", getOpinionControler);
 // Middleware de 404
 
 app.use((req, res) => {

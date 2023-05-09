@@ -1,39 +1,19 @@
-async function getEveryOpinionController(req, res, next) {
-  let connection;
+const { generateError } = require("../../generateError");
+const { queryViewOpinion } = require("../queryOpinions/queryviewOpions");
+
+const getOpinionControler = async (req, res, next) => {
   try {
-    connection = await getConnection();
-
-    const { search, order, direction } = req.query;
-
-    const orderDirection =
-      (direction && direction.toLowerCase()) === "desc" ? "DESC" : "ASC";
-
-    let orderBy;
-    switch (order) {
-      case "username":
-        orderBy = "username";
-        break;
-      case "category":
-        orderBy = "category";
-        break;
-      default:
-        orderBy = "date";
-    }
-
-    let queryResults;
-    if (search) {
-      queryResults = await connection.query(`
-        aquí va el SELECT de la query
-        `);
-    }
+    const id = await queryViewOpinion();
 
     res.send({
-      status: "error",
-      message: "Not implemented",
+      status: "ok",
+      message: `your opinion was succesfully posted: ${id}`,
     });
   } catch (error) {
     next(error);
   }
-}
+};
 
-module.exports = { getEveryOpinionController };
+module.exports = {
+  getOpinionControler,
+};
