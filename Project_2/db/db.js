@@ -1,7 +1,7 @@
 const mysql = require("mysql2/promise");
-
-const { HOST, USER, DATABASE } = process.env;
-
+require("dotenv").config({ path: "../.env" });
+const { HOST, DBUSER, DATABASE } = process.env;
+console.log(process.env);
 let pool;
 
 const getConnection = async () => {
@@ -9,12 +9,13 @@ const getConnection = async () => {
     pool = mysql.createPool({
       connectionLimit: 10,
       host: HOST,
-      user: USER,
+      user: DBUSER,
       database: DATABASE,
+
       timezone: "Z",
     });
   }
-  console.log("ese");
+
   return await pool.getConnection();
 };
 module.exports = { getConnection };

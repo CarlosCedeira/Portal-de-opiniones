@@ -1,5 +1,6 @@
 require("dotenv").config();
 const morgan = require("morgan");
+console.log(process.env);
 
 const { newUserControler } = require("./controllers/users/newUser");
 const { updateUserControler } = require("./controllers/users/updateuser");
