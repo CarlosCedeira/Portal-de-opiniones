@@ -16,7 +16,7 @@ async function connectCreate() {
   id INT PRIMARY KEY AUTO_INCREMENT,
   user_name VARCHAR(25) NOT NULL, 
   email VARCHAR(100) UNIQUE NOT NULL,
-  pasword VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 
 );`);

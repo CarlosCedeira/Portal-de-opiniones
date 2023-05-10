@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 const { generateError } = require("../../generateError");
 const { queryNewUser } = require("../../db/createUser");
 

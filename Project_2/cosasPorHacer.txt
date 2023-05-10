@@ -9,3 +9,10 @@ Revisar control de errores
 Inner join para obtener las opiniones
 
 revisar sintaxis general XD
+
+
+
+
+corregir hash contraseña 
+
+corregir comparacion de contraseñas de bcrypt
