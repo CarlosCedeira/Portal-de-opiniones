@@ -10,11 +10,11 @@ const newUserController = async (req, res, next) => {
       throw generateError("Email or password invalid", 404);
     }
 
-    const id = await queryNewUser(username, email, password);
+    const newUser = await queryNewUser(username, email, password);
 
     res.send({
       status: "ok",
-      message: `User created with id: ${id}`,
+      message: `User created with id: ${newUser}`,
     });
   } catch (error) {
     next(error);
