@@ -4,7 +4,6 @@ const { generateError } = require("../generateError");
 
 const queryNewUser = async (username, email, password) => {
   let connection;
-  console.log(username);
   try {
     connection = await getConnection();
     // Comprobar que no exista otro usuario con ese email
