@@ -1,13 +1,13 @@
 const { generateError } = require("../../generateError");
 const { queryViewOpinion } = require("../queryOpinions/queryviewOpions");
 
-const getOpinionControler = async (req, res, next) => {
+const getOpinionController = async (req, res, next) => {
   try {
-    const id = await queryViewOpinion();
+    const allOpinions = await queryViewOpinion();
 
     res.send({
       status: "ok",
-      message: `your opinion was succesfully posted: ${id}`,
+      message: `${allOpinions}`,
     });
   } catch (error) {
     next(error);
@@ -15,5 +15,5 @@ const getOpinionControler = async (req, res, next) => {
 };
 
 module.exports = {
-  getOpinionControler,
+  getOpinionController,
 };

@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 const { generateError } = require("../../generateError");
 const { queryNewUser } = require("../../db/createUser");
 
-const newUserControler = async (req, res, next) => {
+const newUserController = async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
     // Añadir npm JOI para validar email y password
@@ -22,5 +22,5 @@ const newUserControler = async (req, res, next) => {
 };
 
 module.exports = {
-  newUserControler,
+  newUserController,
 };

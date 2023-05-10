@@ -1,7 +1,7 @@
 const { generateError } = require("../../generateError");
 const { queryUpdateUser } = require("../../db/updateuser");
 
-const updateUserControler = async (req, res, next) => {
+const updateUserController = async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
     // Añadir npm JOI para validar email y password
@@ -13,7 +13,7 @@ const updateUserControler = async (req, res, next) => {
 
     res.send({
       status: "ok",
-      message: `User succesfully updated`,
+      message: `User details succesfully updated`,
     });
   } catch (error) {
     next(error);
@@ -21,5 +21,5 @@ const updateUserControler = async (req, res, next) => {
 };
 
 module.exports = {
-  updateUserControler,
+  updateUserController,
 };

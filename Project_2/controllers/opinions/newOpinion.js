@@ -1,7 +1,7 @@
 const { generateError } = require("../../generateError");
 const { queryNewOpinion } = require("../queryOpinions/QuerynewOpinion");
 
-const newOpinionControler = async (req, res, next) => {
+const newOpinionController = async (req, res, next) => {
   try {
     const { userId, text, image } = req.body;
     // Añadir npm JOI para validar email y password
@@ -9,11 +9,11 @@ const newOpinionControler = async (req, res, next) => {
       throw generateError("Insert a valid opinion", 404);
     }
 
-    const id = await queryNewOpinion(userId, text, image);
+    const newOpinionText = await queryNewOpinion(userId, text, image);
 
     res.send({
       status: "ok",
-      message: `your opinion was succesfully posted: ${id}`,
+      message: `your opinion was succesfully posted: ${newOpinionText}`,
     });
   } catch (error) {
     next(error);
@@ -21,5 +21,5 @@ const newOpinionControler = async (req, res, next) => {
 };
 
 module.exports = {
-  newOpinionControler,
+  newOpinionController,
 };
