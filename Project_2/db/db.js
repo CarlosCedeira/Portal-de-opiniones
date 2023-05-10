@@ -1,7 +1,7 @@
 const mysql = require("mysql2/promise");
 require("dotenv").config({ path: "../.env" });
 const { HOST, DBUSER, DATABASE } = process.env;
-console.log(process.env);
+
 let pool;
 
 const getConnection = async () => {

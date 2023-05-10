@@ -1,11 +1,11 @@
 require("dotenv").config();
 const morgan = require("morgan");
-console.log(process.env);
 
 const { newUserControler } = require("./controllers/users/newUser");
 const { updateUserControler } = require("./controllers/users/updateuser");
 const { newOpinionControler } = require("./controllers/opinions/newOpinion");
 const { getOpinionControler } = require("./controllers/opinions/getOpinion");
+const { userLogin } = require("./controllers/users/loginController");
 const { connectCreate } = require("./db/stardDB");
 
 const express = require("express");
@@ -15,6 +15,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.post("/user", newUserControler);
+app.get("/user", userLogin);
 app.put("/user", updateUserControler);
 
 app.post("/opinion", newOpinionControler);

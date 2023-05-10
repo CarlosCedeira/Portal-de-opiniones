@@ -21,9 +21,10 @@ const queryNewUser = async (username, email, password) => {
 
     // Crearon query para el susuario nuevo
     const [newUser] = await connection.query(
-      `INSERT INTO users (user_name, email, pasword) VALUES (?, ?, ?)`,
+      `INSERT INTO users (user_name, email, password) VALUES (?, ?, ?)`,
       [username, email, passwordEncript]
     );
+
     return newUser.insertId;
   } finally {
     if (connection) connection.release();
