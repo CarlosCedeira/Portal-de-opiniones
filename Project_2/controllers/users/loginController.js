@@ -12,7 +12,7 @@ const userLogin = async (req, res, next) => {
     console.log(name);
     console.log(validpassword);
     if (validpassword) {
-      throw generateError("password not match", 401);
+      throw generateError("password does not match", 401);
     }
 
     const payload = { id: name };

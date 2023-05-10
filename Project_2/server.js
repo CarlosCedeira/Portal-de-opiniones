@@ -1,12 +1,12 @@
 require("dotenv").config();
 const morgan = require("morgan");
 
-const { newUserControler } = require("./controllers/users/newUser");
-const { updateUserControler } = require("./controllers/users/updateuser");
-const { newOpinionControler } = require("./controllers/opinions/newOpinion");
-const { getOpinionControler } = require("./controllers/opinions/getOpinion");
+const { newUserController } = require("./controllers/users/newUser");
+const { updateUserController } = require("./controllers/users/updateuser");
+const { newOpinionController } = require("./controllers/opinions/newOpinion");
+const { getOpinionController } = require("./controllers/opinions/getOpinion");
 const { userLogin } = require("./controllers/users/loginController");
-const { connectCreate } = require("./db/stardDB");
+//const { connectCreate } = require("./db/stardDB");
 
 const express = require("express");
 const app = express();
@@ -14,12 +14,12 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.post("/user", newUserControler);
+app.post("/user", newUserController);
 app.get("/user", userLogin);
-app.put("/user", updateUserControler);
+app.put("/user", updateUserController);
 
-app.post("/opinion", newOpinionControler);
-app.get("/opinion", getOpinionControler);
+app.post("/opinion", newOpinionController);
+app.get("/opinion", getOpinionController);
 // Middleware de 404
 
 app.use((req, res) => {
