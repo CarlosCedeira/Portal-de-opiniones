@@ -2,6 +2,7 @@ const { generateError } = require("../../generateError");
 const { queryUpdateUser } = require("../../db/updateuser");
 
 const updateUserController = async (req, res, next) => {
+  console.log(req.headers);
   try {
     const { username, email, password } = req.body;
     // Añadir npm JOI para validar email y password
