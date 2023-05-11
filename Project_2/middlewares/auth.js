@@ -3,7 +3,6 @@ const { generateError } = require("../generateError");
 
 const authUser = (req, res, next) => {
   try {
-    console.log(req.headers);
     const { authorization } = req.headers;
 
     if (!authorization) {
@@ -20,6 +19,8 @@ const authUser = (req, res, next) => {
     }
 
     // Meter la informacion del token en la reques pra usarla en el controller
+    console.log("This is the token bitch");
+    console.log(token);
 
     req.auth = token;
 

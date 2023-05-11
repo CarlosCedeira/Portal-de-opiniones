@@ -2,9 +2,10 @@ const { generateError } = require("../../generateError");
 const { queryUpdateUser } = require("../../db/updateuser");
 
 const updateUserController = async (req, res, next) => {
-  console.log(req.headers);
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password } = req.auth;
+    console.log("this is update users biiiitch");
+    console.log(req.auth[0]);
     // Añadir npm JOI para validar email y password
     if (!email || !password) {
       throw generateError("Email or password invalid", 404);

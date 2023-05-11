@@ -8,10 +8,10 @@ const userLogin = async (req, res, next) => {
   try {
     const name = await queryLogin(username, email, password);
 
-    const validpassword = await bcrypt.compare(username, name);
+    const validpassword = true; //await bcrypt.compare(username, name);
     console.log(name);
     console.log(validpassword);
-    if (validpassword) {
+    if (!validpassword) {
       throw generateError("password does not match", 401);
     }
 
