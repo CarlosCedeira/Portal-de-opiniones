@@ -15,8 +15,8 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.post("/user", newUserController);
-app.get("/user", userLogin);
+app.post("/", newUserController);
+app.post("/user", userLogin);
 app.put("/user", authUser, updateUserController);
 
 app.post("/opinion", authUser, newOpinionController);
