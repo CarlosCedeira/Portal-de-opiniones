@@ -19,8 +19,7 @@ const queryLogin = async (username, email, password) => {
     /*if (user.length > 0) {
       throw generateError("User exist ", 409);
     }*/
-    console.log(user[0].user_name);
-    return user[0].user_name;
+    return user;
   } finally {
     if (connection) connection.release();
   }
