@@ -4,18 +4,18 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const userLogin = async (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { email, password } = req.body;
+  console.log("email:", email);
   try {
-    const name = await queryLogin(username, email, password);
-
-    const validpassword = true; //await bcrypt.compare(username, name);
-    console.log(name);
-    console.log(validpassword);
-    if (!validpassword) {
+    const name2 = await queryLogin(email);
+    console.log("name:", name2);
+    const validpassword = await bcrypt.compare(password, name2.password);
+    console.log("contra:", password);
+    /*if (!validpassword) {
       throw generateError("password does not match", 401);
-    }
+    }*/
 
-    const payload = { id: name };
+    const payload = { id: name2 };
 
     const token = jwt.sign(payload, process.env.SECRET, {
       expiresIn: "30d",

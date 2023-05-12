@@ -19,7 +19,7 @@ app.post("/", newUserController);
 app.post("/user", userLogin);
 app.put("/user", authUser, updateUserController);
 
-app.post("/opinion", authUser, newOpinionController);
+app.post("/opinion", newOpinionController);
 app.get("/opinion", getOpinionController);
 // Middleware de 404
 

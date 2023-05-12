@@ -1,17 +1,19 @@
 const { generateError } = require("../../generateError");
 const { queryUpdateUser } = require("../../db/updateuser");
+const jwt = require("jsonwebtoken");
+const { token } = require("morgan");
 
 const updateUserController = async (req, res, next) => {
   try {
-    const { username, email, password } = req.auth;
-    console.log("this is update users biiiitch");
-    console.log(req.auth[0]);
-    // Añadir npm JOI para validar email y password
+    const { username, email, password } = req.body;
+    console.log("req", req.auth);
+    const { id } = req.auth.id;
+    console.log("id:", id);
+
     if (!email || !password) {
       throw generateError("Email or password invalid", 404);
     }
-
-    const id = await queryUpdateUser(username, email, password);
+    await queryUpdateUser(username, email, password, id);
 
     res.send({
       status: "ok",
