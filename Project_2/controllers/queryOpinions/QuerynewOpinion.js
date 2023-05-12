@@ -1,15 +1,15 @@
 const { getConnection } = require("../../db/db");
 const { generateError } = require("../../generateError");
 
-const queryNewOpinion = async (userId, text, image) => {
+const queryNewOpinion = async (userId, titulo, text) => {
   let connection;
   try {
     // Crearon query para la opinion nueva
     connection = await getConnection();
     // Comprobar que no exista otro usuario con ese email
     const [user] = await connection.query(
-      `INSERT INTO opinions (user_id, text, image) VALUES (?, ?, ?)`,
-      [userId, text, image]
+      `INSERT INTO opinions (user_id, titulo, text) VALUES (?, ?, ?)`,
+      [userId, titulo, text]
     );
 
     /*if (user.length > 0) {

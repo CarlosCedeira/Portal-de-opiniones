@@ -1,6 +1,8 @@
 require("dotenv").config();
 const morgan = require("morgan");
 
+const { connectCreate } = require("./db/stardDB");
+connectCreate();
 const { newUserController } = require("./controllers/users/newUser");
 const { updateUserController } = require("./controllers/users/updateuser");
 const { newOpinionController } = require("./controllers/opinions/newOpinion");
@@ -19,7 +21,7 @@ app.post("/", newUserController);
 app.post("/user", userLogin);
 app.put("/user", authUser, updateUserController);
 
-app.post("/opinion", newOpinionController);
+app.post("/opinion", authUser, newOpinionController);
 app.get("/opinion", getOpinionController);
 // Middleware de 404
 

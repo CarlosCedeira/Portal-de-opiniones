@@ -3,13 +3,17 @@ const { queryNewOpinion } = require("../queryOpinions/QuerynewOpinion");
 
 const newOpinionController = async (req, res, next) => {
   try {
-    const { userId, text, image } = req.body;
+    const { titulo, text } = req.body;
+    const { id } = req.auth.id;
+    console.log("id es", id);
+    console.log("titulo", titulo);
+    console.log("text", text);
     // Añadir npm JOI para validar email y password
-    if (!text || !image) {
+    if (!text || !titulo) {
       throw generateError("Insert a valid opinion", 404);
     }
 
-    const newOpinionText = await queryNewOpinion(userId, text, image);
+    const newOpinionText = await queryNewOpinion(id, titulo, text);
 
     res.send({
       status: "ok",

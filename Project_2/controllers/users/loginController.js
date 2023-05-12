@@ -5,15 +5,12 @@ const jwt = require("jsonwebtoken");
 
 const userLogin = async (req, res, next) => {
   const { email, password } = req.body;
-  console.log("email:", email);
   try {
     const name2 = await queryLogin(email);
-    console.log("name:", name2);
     const validpassword = await bcrypt.compare(password, name2.password);
-    console.log("contra:", password);
-    /*if (!validpassword) {
+    if (!validpassword) {
       throw generateError("password does not match", 401);
-    }*/
+    }
 
     const payload = { id: name2 };
 
