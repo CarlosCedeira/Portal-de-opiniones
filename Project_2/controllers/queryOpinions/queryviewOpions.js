@@ -4,15 +4,14 @@ const { generateError } = require("../../generateError");
 const queryViewOpinion = async () => {
   let connection;
   try {
-    // Crearon query para la opinion nueva
     connection = await getConnection();
-    // Comprobar que no exista otro usuario con ese email
-    const [user] = await connection.query(`SELECT text FROM opinions`);
 
-    /*if (user.length > 0) {
-      throw generateError("User exist ", 409);
-    }*/
-    return user;
+    const [user] = await connection.query(`SELECT titulo, text FROM opinions`);
+    if (Object.keys(user).length === 0) {
+      throw generateError("Sorry does not have opinions ", 409);
+    }
+    montarQuery = `${user[0].titulo}: ${user[0].text}`;
+    return montarQuery;
   } finally {
     if (connection) connection.release();
   }

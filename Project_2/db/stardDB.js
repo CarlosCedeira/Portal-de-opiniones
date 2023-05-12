@@ -6,7 +6,6 @@ async function connectCreate() {
   let connection;
   try {
     connection = await getConnection();
-    console.log("eseeeeee");
     /// Borramos la tabla si existe
     await connection.query(`DROP TABLE IF EXISTS opinions`);
     await connection.query(`DROP TABLE IF EXISTS users`);
@@ -23,8 +22,8 @@ async function connectCreate() {
     await connection.query(`CREATE TABLE opinions(
   id INT PRIMARY KEY AUTO_INCREMENT,
   user_id INT NOT NULL, 
+  titulo VARCHAR(100), 
   text TINYTEXT NOT NULL,
-  image VARCHAR(100), 
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );`);
@@ -32,7 +31,6 @@ async function connectCreate() {
     console.error(error);
   } finally {
     if (connection) connection.release();
-    //process.exit();
   }
 }
-connectCreate();
+module.exports = { connectCreate };
