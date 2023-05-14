@@ -7,11 +7,16 @@ const queryViewOpinion = async () => {
     connection = await getConnection();
 
     const [user] = await connection.query(`SELECT titulo, text FROM opinions`);
+    let todasLasOpiniones = [];
+    for (let i = 0; i < user.length; i++) {
+      todasLasOpiniones.push(user[i]);
+    }
+
     if (Object.keys(user).length === 0) {
       throw generateError("Sorry does not have opinions ", 409);
     }
-    montarQuery = `${user[0].titulo}: ${user[0].text}`;
-    return montarQuery;
+
+    return JSON.stringify(todasLasOpiniones);
   } finally {
     if (connection) connection.release();
   }
