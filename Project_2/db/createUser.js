@@ -9,7 +9,7 @@ const queryNewUser = async (username, email, password) => {
     // Comprobar que no exista otro usuario con ese email
     const [user] = await connection.query(
       `SELECT id FROM users WHERE email = ?`,
-      [email]
+      [email, username]
     );
 
     if (user.length > 0) {
