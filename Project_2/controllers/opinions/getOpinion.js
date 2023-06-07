@@ -6,7 +6,7 @@ const getOpinionController = async (req, res, next) => {
     const allOpinions = await queryViewOpinion();
     res.send({
       status: "ok",
-      message: `${allOpinions}`,
+      message: allOpinions,
     });
   } catch (error) {
     next(error);

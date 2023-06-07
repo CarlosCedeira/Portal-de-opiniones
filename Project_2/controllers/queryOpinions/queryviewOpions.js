@@ -16,7 +16,7 @@ const queryViewOpinion = async () => {
       throw generateError("Sorry does not have opinions ", 409);
     }
 
-    return JSON.stringify(todasLasOpiniones);
+    return todasLasOpiniones;
   } finally {
     if (connection) connection.release();
   }

@@ -5,9 +5,7 @@ const newOpinionController = async (req, res, next) => {
   try {
     const { titulo, text } = req.body;
     const { id } = req.auth.id;
-    console.log("id es", id);
-    console.log("titulo", titulo);
-    console.log("text", text);
+
     // Añadir npm JOI para validar email y password
     if (!text || !titulo) {
       throw generateError("Insert a valid opinion", 404);

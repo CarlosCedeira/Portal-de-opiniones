@@ -10,7 +10,6 @@ const queryUpdateUser = async (username, email, password, id) => {
     const [user] = await connection.query(`SELECT id FROM users WHERE id = ?`, [
       id,
     ]);
-    console.log(user);
     if (!user[0]) {
       throw generateError("User does not exist ", 409);
     }
