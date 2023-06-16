@@ -12,13 +12,13 @@ const userLogin = async (req, res, next) => {
       throw generateError("invalid email format", 404);
     }
 
-    const name2 = await queryLogin(email);
-    const validpassword = await bcrypt.compare(password, name2.password);
+    const user = await queryLogin(email);
+    const validpassword = await bcrypt.compare(password, user.password);
     if (!validpassword) {
       throw generateError("password does not match", 401);
     }
 
-    const payload = { id: name2 };
+    const payload = { id: user };
 
     const token = jwt.sign(payload, process.env.SECRET, {
       expiresIn: "30d",
@@ -26,7 +26,12 @@ const userLogin = async (req, res, next) => {
 
     res.send({
       status: "ok",
-      data: token,
+      data: {
+        token,
+        id: user.id,
+        usuario: user.user_name,
+        email: user.email,
+      },
     });
   } catch (error) {
     next(error);

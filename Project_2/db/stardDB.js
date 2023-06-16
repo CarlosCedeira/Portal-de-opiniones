@@ -21,7 +21,7 @@ async function connectCreate() {
 );`);
     await connection.query(`CREATE TABLE opinions(
   id INT PRIMARY KEY AUTO_INCREMENT,
-  user_id INT NOT NULL, 
+  user_id INT NOT NULL,
   titulo VARCHAR(100), 
   text TINYTEXT NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
