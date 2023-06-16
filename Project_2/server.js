@@ -7,14 +7,19 @@ const { newUserController } = require("./controllers/users/newUser");
 const { updateUserController } = require("./controllers/users/updateuser");
 const { newOpinionController } = require("./controllers/opinions/newOpinion");
 const { getOpinionController } = require("./controllers/opinions/getOpinion");
+const {
+  deleteOpinionController,
+} = require("./controllers/opinions/deleteOpinions");
 const { userLogin } = require("./controllers/users/loginController");
 const { authUser } = require("./middlewares/auth");
 //const { connectCreate } = require("./db/stardDB");
 
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 app.use(morgan("dev"));
+app.use(cors());
 app.use(express.json());
 
 app.post("/", newUserController);
@@ -23,6 +28,7 @@ app.put("/user", authUser, updateUserController);
 
 app.post("/opinion", authUser, newOpinionController);
 app.get("/opinion", getOpinionController);
+app.delete("/opinion", authUser, deleteOpinionController);
 // Middleware de 404
 
 app.use((req, res) => {

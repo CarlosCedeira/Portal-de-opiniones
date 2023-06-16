@@ -5,6 +5,8 @@ const { validarEmail } = require("../../ValidacionJOI");
 
 const newUserController = async (req, res, next) => {
   try {
+    console.log("requeeeeeeeees");
+    console.log(req);
     const { username, email, password } = req.body;
     if (!email || !password) {
       throw generateError("Introduce email or password", 404);

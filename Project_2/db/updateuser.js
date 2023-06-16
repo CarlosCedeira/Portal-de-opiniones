@@ -2,7 +2,12 @@ const bcrypt = require("bcrypt");
 const { getConnection } = require("./db");
 const { generateError } = require("../generateError");
 
-const queryUpdateUser = async (username, email, password, id) => {
+const queryUpdateUser = async (
+  nuevoUsuario,
+  nuevoCorreo,
+  nuevaContraseña,
+  id
+) => {
   let connection;
   try {
     connection = await getConnection();
@@ -14,14 +19,20 @@ const queryUpdateUser = async (username, email, password, id) => {
       throw generateError("User does not exist ", 409);
     }
     // Encriptar la password
-    const passwordEncript = await bcrypt.hash(password, 10);
+    const passwordEncript = await bcrypt.hash(nuevaContraseña, 10);
 
     // Crearon query para el susuario nuevo
     const [newUserUpdate] = await connection.query(
       `UPDATE users SET user_name=?, email=?, password=? WHERE id = ?`,
-      [username, email, passwordEncript, id]
+      [nuevoUsuario, nuevoCorreo, passwordEncript, id]
     );
-    return;
+
+    const [usuarioActualizado] = await connection.query(
+      `SELECT * FROM users WHERE id = ?`,
+      [id]
+    );
+
+    return usuarioActualizado[0];
   } finally {
     if (connection) connection.release();
   }

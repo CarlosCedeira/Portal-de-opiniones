@@ -6,7 +6,12 @@ const queryViewOpinion = async () => {
   try {
     connection = await getConnection();
 
-    const [user] = await connection.query(`SELECT titulo, text FROM opinions`);
+    const [user] = await connection.query(
+      `SELECT opinions.id, users.user_name, opinions.user_id, opinions.titulo, opinions.text, opinions.created_at
+      FROM users
+      JOIN opinions ON users.id = opinions.user_id`
+      //`SELECT titulo, text, created_at FROM opinions`
+    );
     let todasLasOpiniones = [];
     for (let i = 0; i < user.length; i++) {
       todasLasOpiniones.push(user[i]);

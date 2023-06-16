@@ -12,6 +12,7 @@ const queryLogin = async (email) => {
       "SELECT * FROM users WHERE email = ?",
       [email]
     );
+    console.log("userlogin", user[0]);
     if (user.length === 0) {
       throw generateError("User not exist ", 409);
     }

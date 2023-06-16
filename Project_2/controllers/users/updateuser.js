@@ -6,23 +6,29 @@ const { token } = require("morgan");
 
 const updateUserController = async (req, res, next) => {
   try {
-    const { username, email, password } = req.body;
+    const { nuevoUsuario, nuevoCorreo, nuevaContraseña } = req.body;
+    console.log("holaaaaaaa");
     const { id } = req.auth.id;
 
-    if (!email || !password) {
+    if (!nuevoCorreo || !nuevaContraseña) {
       throw generateError("Email or password invalid", 404);
     }
 
-    const esValido = await validarEmail(email);
+    const esValido = await validarEmail(nuevoCorreo);
     if (!esValido) {
       throw generateError("invalid email format", 404);
     }
 
-    await queryUpdateUser(username, email, password, id);
-
+    const informacionActualizada = await queryUpdateUser(
+      nuevoUsuario,
+      nuevoCorreo,
+      nuevaContraseña,
+      id
+    );
+    console.log("nuevos datos para el usuario", informacionActualizada);
     res.send({
       status: "ok",
-      message: `User details succesfully updated`,
+      respuestaNuevoUsuario: informacionActualizada,
     });
   } catch (error) {
     next(error);
