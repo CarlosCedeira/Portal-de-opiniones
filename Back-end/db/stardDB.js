@@ -24,6 +24,7 @@ async function connectCreate() {
   user_id INT NOT NULL,
   titulo VARCHAR(100), 
   text TINYTEXT NOT NULL,
+  cantidad_likes INT DEFAULT 0,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );`);

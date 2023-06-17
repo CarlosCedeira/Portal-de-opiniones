@@ -12,11 +12,11 @@ const {
 } = require("./controllers/opinions/deleteOpinions");
 const { userLogin } = require("./controllers/users/loginController");
 const { authUser } = require("./middlewares/auth");
-//const { connectCreate } = require("./db/stardDB");
 
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const { postLikeController } = require("./controllers/opinions/likeOpinion");
 
 app.use(morgan("dev"));
 app.use(cors());
@@ -29,7 +29,7 @@ app.put("/user", authUser, updateUserController);
 app.post("/opinion", authUser, newOpinionController);
 app.get("/opinion", getOpinionController);
 app.delete("/opinion", authUser, deleteOpinionController);
-// Middleware de 404
+app.post("/opinion/like", authUser, postLikeController);
 
 app.use((req, res) => {
   res.status(404).send({
