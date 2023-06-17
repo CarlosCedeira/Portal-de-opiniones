@@ -13,7 +13,6 @@ export const Inicio = () => {
 
   const borrarOpinion = async (e) => {
     const eventoId = +e.target.id;
-    console.log(eventoId);
 
     const confirmarEliminidao = confirm(`¿Estas seguro de borrar la opinion?`);
 

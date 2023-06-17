@@ -14,7 +14,6 @@ const authUser = (req, res, next) => {
 
     try {
       token = jwt.verify(authorization, process.env.SECRET);
-      console.log("el token es", token);
     } catch {
       throw generateError("token no coincide, 401");
     }
