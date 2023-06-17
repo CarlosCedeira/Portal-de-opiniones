@@ -7,10 +7,9 @@ const queryDeleteOpinion = async (id) => {
     // Crearon query para la opinion nueva
     connection = await getConnection();
     // Comprobar que no exista otro usuario con ese email
-    const [user] = await connection.query(
-      `DELETE FROM opinions WHERE id VALUES (?)`,
-      [id]
-    );
+    const [user] = await connection.query(`DELETE FROM opinions WHERE id = ?`, [
+      id,
+    ]);
   } finally {
     if (connection) connection.release();
   }

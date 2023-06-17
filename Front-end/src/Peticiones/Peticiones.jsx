@@ -93,13 +93,12 @@ export const CargarOpiniones = async () => {
 };
 
 export const borrarOpiniones = async (token, eventoId) => {
-  console.log("borrar token", token);
-  console.log("evento id", eventoId);
   const response = await fetch("http://localhost:3000/opinion", {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
       Authorization: token,
+      idOpinion: eventoId,
     },
     body: JSON.stringify({ eventoId }),
   });

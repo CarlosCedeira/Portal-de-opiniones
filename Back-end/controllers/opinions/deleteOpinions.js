@@ -4,8 +4,9 @@ const { queryDeleteOpinion } = require("../queryOpinions/queryDeleteOpinions");
 const deleteOpinionController = async (req, res, next) => {
   try {
     const { id } = req.auth.id;
+    const idOpinon = req.headers.idopinion;
 
-    await queryDeleteOpinion(id);
+    await queryDeleteOpinion(idOpinon);
 
     res.send({
       status: "ok",
