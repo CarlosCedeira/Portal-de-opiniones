@@ -10,6 +10,7 @@ export const Inicio = () => {
   if (cargando) return <p>Cargando opiniones...</p>;
   if (error) return <p>{error}</p>;
   console.log(token);
+  console.log(opiniones);
 
   const borrarOpinion = async (e) => {
     const eventoId = +e.target.id;
@@ -34,6 +35,7 @@ export const Inicio = () => {
         <article key={opinion.id}>
           <h1>{opinion.titulo}</h1>
           <p>{opinion.text}</p>
+          <p>{opinion.cantidad_likes}</p>
           <p>{opinion.created_at}</p>
           <p>{opinion.user_name}</p>
           <p>{opinion.user_id}</p>
