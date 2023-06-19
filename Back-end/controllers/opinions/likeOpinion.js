@@ -3,10 +3,12 @@ const { queryPosLike } = require("../queryOpinions/queryLikeOpinions");
 
 const postLikeController = async (req, res, next) => {
   try {
-    const { idOpinion } = req.body;
-    console.log("idopinion controlador", idOpinion);
+    const { eventoId } = req.body;
+    const { id } = req.auth.id;
+    console.log("idopinion controlador", eventoId);
+    console.log("id user controlador", id);
 
-    await queryPosLike(idOpinion);
+    await queryPosLike(eventoId, id);
 
     res.send({
       status: "ok",

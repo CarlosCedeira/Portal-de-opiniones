@@ -7,6 +7,7 @@ async function connectCreate() {
   try {
     connection = await getConnection();
     /// Borramos la tabla si existe
+    await connection.query(`DROP TABLE IF EXISTS likes`);
     await connection.query(`DROP TABLE IF EXISTS opinions`);
     await connection.query(`DROP TABLE IF EXISTS users`);
 
@@ -28,6 +29,15 @@ async function connectCreate() {
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (user_id) REFERENCES users(id)
 );`);
+
+    await connection.query(`CREATE TABLE likes (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  opinion_id INT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (opinion_id) REFERENCES opinions(id) ON DELETE CASCADE
+)`);
   } catch (error) {
     console.error(error);
   } finally {

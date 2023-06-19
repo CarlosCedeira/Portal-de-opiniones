@@ -8,6 +8,9 @@ const { updateUserController } = require("./controllers/users/updateuser");
 const { newOpinionController } = require("./controllers/opinions/newOpinion");
 const { getOpinionController } = require("./controllers/opinions/getOpinion");
 const {
+  getOpinionLoginController,
+} = require("./controllers/opinions/opinionLogin");
+const {
   deleteOpinionController,
 } = require("./controllers/opinions/deleteOpinions");
 const { userLogin } = require("./controllers/users/loginController");
@@ -30,6 +33,7 @@ app.post("/opinion", authUser, newOpinionController);
 app.get("/opinion", getOpinionController);
 app.delete("/opinion", authUser, deleteOpinionController);
 app.post("/opinion/like", authUser, postLikeController);
+app.get("/opinion/id", authUser, getOpinionLoginController);
 
 app.use((req, res) => {
   res.status(404).send({
