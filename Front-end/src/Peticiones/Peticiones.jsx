@@ -92,6 +92,25 @@ export const CargarOpiniones = async () => {
   return json.message;
 };
 
+export const cargarOpinionesConLike = async (token) => {
+  console.log("cargaropinionesconlike", token);
+  const response = await fetch("http://localhost:3000/opinion/id", {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+  });
+  const json = await response.json();
+  console.log("respuesta", json.message);
+
+  if (!response.ok) {
+    console.log(json.message);
+    throw new Error(json.message);
+  }
+
+  return json.message;
+};
+
 export const borrarOpiniones = async (token, eventoId) => {
   const response = await fetch("http://localhost:3000/opinion", {
     method: "DELETE",
@@ -109,4 +128,24 @@ export const borrarOpiniones = async (token, eventoId) => {
     console.log(json.message);
     throw new Error(json.message);
   }
+};
+
+export const likeOpiniones = async ({ token, eventoId, id }) => {
+  const response = await fetch("http://localhost:3000/opinion/like", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token,
+    },
+    body: JSON.stringify({ eventoId, id }),
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    console.log(json.message);
+    throw new Error(json.message);
+  }
+
+  return json.data;
 };
