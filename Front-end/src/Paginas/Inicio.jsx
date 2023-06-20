@@ -44,10 +44,10 @@ export const Inicio = () => {
 
   return (
     <>
-      <h1>Ultimas opiniones</h1>
+      <h2>Ultimas opiniones</h2>
       {opiniones.map((opinion) => (
-        <article key={opinion.id}>
-          <h1>{opinion.titulo}</h1>
+        <article className="noticia" key={opinion.id}>
+          <h3>{opinion.titulo}</h3>
           <p>user id</p>
           <p>{opinion.user_id}</p>
           <p>user dio like</p>
