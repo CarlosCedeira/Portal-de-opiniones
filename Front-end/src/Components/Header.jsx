@@ -10,7 +10,7 @@ export const Header = () => {
     <header>
       <h1>
         <Link to="/">
-          {usuario ? `Bienvenido ${usuario}` : `Portal de opinion`}
+          {usuario ? `Bienvenido ${usuario}` : `Portal de opinión`}
         </Link>
       </h1>
 
