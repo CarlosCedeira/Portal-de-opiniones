@@ -33,7 +33,7 @@ export const Registro = () => {
 
   return (
     <>
-      <h1>Registro</h1>
+      <h2>Registro</h2>
       <form onSubmit={handleForm}>
         <fieldset>
           <label htmlFor="email">Email:</label>
