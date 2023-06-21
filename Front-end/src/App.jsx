@@ -1,3 +1,5 @@
+import "./app.css";
+
 import { Routes, Route } from "react-router-dom";
 
 import { Header } from "./Components/Header";
@@ -12,7 +14,7 @@ import { ActualizarPerfil } from "./Paginas/ActualizarPerfil";
 
 function App() {
   return (
-    <main>
+    <main className="app">
       <Header />
       <Routes>
         <Route path="/" element={<Inicio />} />

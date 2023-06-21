@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
 import { LoginUsuario } from "../Peticiones/Peticiones";
 import { AuthContext } from "../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,6 +28,7 @@ export const Login = () => {
       setGuardarEmail(data.email);
       setFecha(data.created_at);
       setRespuesta(data.status);
+      navigate("/");
     } catch (error) {
       console.log("error", error);
       setError(error);
@@ -34,7 +37,7 @@ export const Login = () => {
 
   return (
     <>
-      <h1>Login</h1>
+      <h2>Login</h2>
       <p>{respuesta}</p>
       <form onSubmit={handleForm}>
         <fieldset>

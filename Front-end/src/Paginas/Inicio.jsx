@@ -1,7 +1,11 @@
 import { useContext, useState } from "react";
 import { UseOpiniones } from "../Hooks/UseOpiniones";
 import { AuthContext } from "../Context/AuthContext";
-import { borrarOpiniones, likeOpiniones } from "../Peticiones/Peticiones";
+import {
+  borrarOpiniones,
+  cargarOpinionesConLike,
+  likeOpiniones,
+} from "../Peticiones/Peticiones";
 
 export const Inicio = () => {
   const { opiniones, setOpiniones, cargando, error } = UseOpiniones();
@@ -9,8 +13,6 @@ export const Inicio = () => {
 
   if (cargando) return <p>Cargando opiniones...</p>;
   if (error) return <p>{error}</p>;
-  console.log(token);
-  console.log(opiniones);
 
   const darLike = async (e) => {
     e.preventDefault();
@@ -19,7 +21,10 @@ export const Inicio = () => {
 
     try {
       const opinionesConLike = await likeOpiniones({ token, eventoId, id });
-      setOpiniones(opinionesConLike);
+      const opinionesLogin = await cargarOpinionesConLike(token);
+      setOpiniones(opinionesLogin);
+      console.log("token", token);
+      console.log(opiniones);
     } catch (error) {
       console.log(error);
       //setError(error);
@@ -44,10 +49,10 @@ export const Inicio = () => {
 
   return (
     <>
-      <h1>Ultimas opiniones</h1>
+      <h2>Ultimas opiniones</h2>
       {opiniones.map((opinion) => (
-        <article key={opinion.id}>
-          <h1>{opinion.titulo}</h1>
+        <article className="noticia" key={opinion.id}>
+          <h3>{opinion.titulo}</h3>
           <p>user id</p>
           <p>{opinion.user_id}</p>
           <p>user dio like</p>
@@ -59,7 +64,7 @@ export const Inicio = () => {
           <p>{opinion.user_name}</p>
           <p>{opinion.user_id}</p>
           <p>{opinion.opinion_id}</p>
-          {opinion.user_id !== opinion.id_usuario_like ? (
+          {opinion.user_id !== opinion.id_usuario_like && token ? (
             <button id={opinion.id} onClick={(e) => darLike(e)}>
               Like
             </button>

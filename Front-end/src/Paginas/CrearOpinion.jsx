@@ -1,8 +1,10 @@
 import { useState, useContext } from "react";
 import { NuevaOpinion } from "../Peticiones/Peticiones";
 import { AuthContext } from "../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const FormularioNuevaOpinion = () => {
+  const navigate = useNavigate();
   const [titulo, setTitulo] = useState("Titulo para la opinion");
   const [texto, setTexto] = useState("Texto para la opinion");
   const [error, setError] = useState("");
@@ -12,6 +14,7 @@ export const FormularioNuevaOpinion = () => {
     e.preventDefault();
     try {
       const data = await NuevaOpinion({ token, titulo, texto });
+      navigate("/");
       console.log(data);
     } catch (error) {
       console.log(error);
