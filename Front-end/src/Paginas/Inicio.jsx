@@ -65,21 +65,13 @@ export const Inicio = () => {
           <p>{opinion.user_id}</p>
           <p>{opinion.opinion_id}</p>
           {token && opinion.user_id !== opinion.id_usuario_like ? (
+          {token && opinion.user_id !== opinion.id_usuario_like ? (
             <button id={opinion.id} onClick={(e) => darLike(e)}>
-<<<<<<< HEAD
-              ❤️
-=======
               🤍
->>>>>>> a5f5f7a ( funcionalidad likes)
             </button>
           ) : null}
           {id === opinion.user_id ? (
             <button id={opinion.id} onClick={(e) => borrarOpinion(e)}>
-<<<<<<< HEAD
-              ❌
-=======
-              🗑️
->>>>>>> a5f5f7a ( funcionalidad likes)
             </button>
           ) : null}
         </article>
