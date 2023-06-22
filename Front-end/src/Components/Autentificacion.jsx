@@ -14,6 +14,9 @@ export const Autentificacion = () => {
           <Link to="/user">
             <li>ver perfil</li>
           </Link>
+          <Link to="http://localhost:5173/">
+            <li>Cerrar sesion</li>
+          </Link>
         </>
       ) : (
         <>

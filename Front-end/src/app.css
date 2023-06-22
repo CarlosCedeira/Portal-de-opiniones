@@ -2,102 +2,101 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  }
+}
+html {
+  background-image: url("https://img.freepik.com/foto-gratis/fondo-pahttps://cdn.pixabay.com/photo/2016/11/29/05/01/beach-1867436_1280.jpgntalla-telefono-movil-playa-arena-blanca_53876-138183.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-  html {
-    min-height: 100%;
-  }
+main.app header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a {
+  text-decoration-line: none;
+}
+.app header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  main {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: 10% 1fr ;
-  }
+ul {
+  list-style: none;
+  align-content: space-around;
+}
+main.app {
+  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: auto 1fr auto;
+}
 
-  main.app header {
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+/* .app header ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+} */
+.app footer {
+  background-color: black;
+  text-align: right;
+  color: white;
+}
 
-  header a {
-    text-decoration-line: none;
-  }
+.noticia {
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin: 1rem;
+}
 
-  ul {
-    display: flex;
-    list-style: none;
-    align-content: space-around;
-  }
+h1 {
+  margin-left: 40px;
+  font-size: x-large;
+  text-decoration-line: none;
+}
+h2,
+h3 {
+  display: grid;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
 
-  ul li {
-    margin-right: 10px;
-  }
+form fieldset {
+  border: none;
+  margin-bottom: 1rem;
+}
 
-  .noticia {
-    border: 1px solid;
-    border-radius: 1rem;
-    padding: 1rem 2rem;
-    margin: 1rem;
-  }
-  
-  h1 {
-    margin-left: 40px;
-    font-size: x-large;
-    text-decoration-line: none;
-  }
-  h2,
-  h3 {
-    display: grid;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  
-  form fieldset {
-    border: none;
-    margin-bottom: 1rem;
-  }
-  
-  form label {
-    display: flex;
-    margin-bottom: 0.5rem;
-    margin-left: 10px;
-    font-weight: bold;
-  }
-  
-  form input {
-    width: 90%;
-    padding: 0.5rem;
-    margin-left: 10px;
-    box-shadow: -1px -1px;
-    border-radius: 3%;
-    background-color: rgb(198, 197, 197);
-  }
-  
-  form p {
-    margin-top: 1rem;
-  }
-  form button {
-    padding: 8px;
-    margin-left: 10px;
-    font-size: medium;
-    border-radius: 10px;
-    background-color: rgb(196, 231, 240);
-    transition: background-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  article button {
-    margin-left: 25px;
-  }
-  
-  footer {
-    background-color: black;
-    display: flex;
-    justify-content: end;
-    bottom: 0;
-    position: relative;
-    width: 100%;
-    height: 30px;
-    color: white;
-  }
+form label {
+  display: flex;
+  margin-bottom: 0.5rem;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+form input {
+  width: 90%;
+  padding: 0.5rem;
+  margin-left: 10px;
+  box-shadow: -1px -1px;
+  border-radius: 3%;
+  background-color: rgb(198, 197, 197);
+}
+
+form p {
+  margin-top: 1rem;
+}
+form button {
+  padding: 8px;
+  margin-left: 10px;
+  font-size: medium;
+  border-radius: 10px;
+  background-color: rgb(196, 231, 240);
+  transition: background-shadow 0.3s ease;
+  cursor: pointer;
+}
