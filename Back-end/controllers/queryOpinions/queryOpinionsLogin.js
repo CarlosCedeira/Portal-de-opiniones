@@ -15,7 +15,7 @@ const queryOpinionsLogin = async (id) => {
       likes.user_id AS id_usuario_like
       FROM users
       JOIN opinions ON users.id = opinions.user_id
-      LEFT JOIN likes ON opinions.id = likes.user_id`
+      LEFT JOIN likes ON opinions.id = likes.opinion_id`
     );
 
     console.log("respuesta query base de datos", userOpinion);

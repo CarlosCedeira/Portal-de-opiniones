@@ -64,14 +64,14 @@ export const Inicio = () => {
           <p>{opinion.user_name}</p>
           <p>{opinion.user_id}</p>
           <p>{opinion.opinion_id}</p>
-          {opinion.user_id !== opinion.id_usuario_like && token ? (
+          {token && opinion.user_id !== opinion.id_usuario_like ? (
             <button id={opinion.id} onClick={(e) => darLike(e)}>
-              Like
+              🤍
             </button>
           ) : null}
           {id === opinion.user_id ? (
             <button id={opinion.id} onClick={(e) => borrarOpinion(e)}>
-              Eliminar
+              🗑️
             </button>
           ) : null}
         </article>

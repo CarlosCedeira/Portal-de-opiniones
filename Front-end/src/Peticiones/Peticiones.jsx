@@ -102,7 +102,7 @@ export const cargarOpinionesConLike = async (token) => {
     },
   });
   const json = await response.json();
-  console.log("respuesta peticion", response);
+  console.log("respuesta peticion", json);
 
   if (!response.ok) {
     console.log(json.message);
