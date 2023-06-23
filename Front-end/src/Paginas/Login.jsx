@@ -28,6 +28,8 @@ export const Login = () => {
       setGuardarEmail(data.email);
       setFecha(data.created_at);
       setRespuesta(data.status);
+      console.log("data", data);
+      console.log("fecha", data.created_at);
       navigate("/");
     } catch (error) {
       console.log("error", error);
