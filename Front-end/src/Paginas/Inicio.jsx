@@ -53,20 +53,19 @@ export const Inicio = () => {
       {opiniones.map((opinion) => (
         <article className="noticia" key={opinion.id}>
           <h3>{opinion.titulo}</h3>
-          <p>user id</p>
-          <p>{opinion.user_id}</p>
-          <p>user dio like</p>
-          <p>{opinion.id_usuario_like}</p>
           <p>{opinion.text}</p>
-          <p>Cantidad de likes</p>
-          <p>{opinion.cantidad_likes}</p>
-          <p>{opinion.created_at}</p>
-          <p>{opinion.user_name}</p>
-          <p>{opinion.user_id}</p>
-          <p>{opinion.opinion_id}</p>
-          {opinion.user_id !== opinion.id_usuario_like && token ? (
+          <p>Id del usuario que creo la opinion: {opinion.user_id}</p>
+          <p>user dio like: {opinion.id_usuario_like}</p>
+          <p>Cantidad de likes: {opinion.cantidad_likes}</p>
+          <p>Fecha de la opinion: {opinion.created_at}</p>
+          <p>Usuario que relaizo la opinion: {opinion.user_name}</p>
+          <p>id del usuario: {opinion.user_id}</p>
+          <p> id de la opinion: {opinion.opinion_id}</p>
+          <p>id guardado {id}</p>
+
+          {token && opinion.user_id !== id ? (
             <button id={opinion.id} onClick={(e) => darLike(e)}>
-              ❤️
+              🤍
             </button>
           ) : null}
           {id === opinion.user_id ? (

@@ -4,6 +4,8 @@ import { AuthContext } from "../Context/AuthContext";
 
 export const Autentificacion = () => {
   const { token } = useContext(AuthContext);
+
+  const CerrarSesion = () => {};
   return (
     <ul>
       {token ? (
@@ -13,9 +15,6 @@ export const Autentificacion = () => {
           </Link>
           <Link to="/user">
             <li>ver perfil</li>
-          </Link>
-          <Link to="http://localhost:5173/">
-            <li>Cerrar sesion</li>
           </Link>
         </>
       ) : (

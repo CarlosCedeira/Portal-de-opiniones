@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   background-image: url("https://img.freepik.com/foto-gratis/fondo-pahttps://cdn.pixabay.com/photo/2016/11/29/05/01/beach-1867436_1280.jpgntalla-telefono-movil-playa-arena-blanca_53876-138183.jpg");
   background-size: cover;
@@ -99,4 +100,8 @@ form button {
   background-color: rgb(196, 231, 240);
   transition: background-shadow 0.3s ease;
   cursor: pointer;
+}
+
+article button { 
+  margin-left: 10px;
 }
