@@ -20,11 +20,9 @@ export const Inicio = () => {
     console.log("id del target", eventoId);
 
     try {
-      const opinionesConLike = await likeOpiniones({ token, eventoId, id });
+      await likeOpiniones({ token, eventoId, id });
       const opinionesLogin = await cargarOpinionesConLike(token);
       setOpiniones(opinionesLogin);
-      console.log("token", token);
-      console.log(opiniones);
     } catch (error) {
       console.log(error);
       //setError(error);
@@ -50,6 +48,13 @@ export const Inicio = () => {
   return (
     <>
       <h2>Ultimas opiniones</h2>
+      <p>
+        En nuestro sitio, encontrarás un espacio dedicado a explorar y compartir
+        experiencias sobre diferentes playas de Galicia. Creemos en la
+        importancia de la comunidad y en el poder de las opiniones personales,
+        por lo que nuestro objetivo es brindarte un lugar donde puedas descubrir
+        y compartir tus impresiones sobre playas de todo tipo.
+      </p>
       {opiniones.map((opinion) => (
         <article className="noticia" key={opinion.id}>
           <h3>{opinion.titulo}</h3>
@@ -63,15 +68,22 @@ export const Inicio = () => {
           <p> id de la opinion: {opinion.opinion_id}</p>
           <p>id guardado {id}</p>
 
-          {token && opinion.user_id !== id ? (
-            <button id={opinion.id} onClick={(e) => darLike(e)}>
-              🤍
-            </button>
-          ) : null}
+          {token &&
+            (!opinion.id_usuario_like ? (
+              <p id={opinion.id} onClick={(e) => darLike(e)}>
+                🤍
+              </p>
+            ) : (
+              <p>❤️</p>
+            ))}
           {id === opinion.user_id ? (
-            <button id={opinion.id} onClick={(e) => borrarOpinion(e)}>
+            <p
+              className="boton-borrado"
+              id={opinion.id}
+              onClick={(e) => borrarOpinion(e)}
+            >
               ❌
-            </button>
+            </p>
           ) : null}
         </article>
       ))}

@@ -11,11 +11,12 @@ const queryOpinionsLogin = async (id) => {
       `SELECT DISTINCT opinions.id, users.user_name,
       opinions.user_id, opinions.titulo, opinions.text,
       opinions.cantidad_likes,
-      opinions.created_at,
-      likes.user_id AS id_usuario_like
+      DATE_FORMAT(opinions.created_at, '%Y/%m/%d') AS created_at,
+      (ul.user_id is not null) AS id_usuario_like
       FROM users
       JOIN opinions ON users.id = opinions.user_id
-      LEFT JOIN likes ON opinions.id = likes.opinion_id`
+      LEFT JOIN (SELECT * FROM opiniones.likes
+      WHERE user_id = 1) ul ON opinions.id = ul.opinion_id`
     );
 
     console.log("respuesta query base de datos", userOpinion);

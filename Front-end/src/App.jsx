@@ -14,19 +14,21 @@ import { ActualizarPerfil } from "./Paginas/ActualizarPerfil";
 
 function App() {
   return (
-    <main className="app">
+    <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/registro" element={<Registro />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/user" element={<ActualizarPerfil />} />
-        <Route path="/opiniones" element={<FormularioNuevaOpinion />} />
-        <Route path="/opiniones/:id" element={<h1>Opinion unica</h1>} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <main className="app">
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/registro" element={<Registro />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/user" element={<ActualizarPerfil />} />
+          <Route path="/opiniones" element={<FormularioNuevaOpinion />} />
+          <Route path="/opiniones/:id" element={<h1>Opinion unica</h1>} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
 
