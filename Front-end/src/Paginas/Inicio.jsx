@@ -47,26 +47,24 @@ export const Inicio = () => {
 
   return (
     <>
-      <h2>Ultimas opiniones</h2>
-      <p>
+      <h2>Playas de Galicia</h2>
+      <p className="text">
         En nuestro sitio, encontrarás un espacio dedicado a explorar y compartir
         experiencias sobre diferentes playas de Galicia. Creemos en la
         importancia de la comunidad y en el poder de las opiniones personales,
         por lo que nuestro objetivo es brindarte un lugar donde puedas descubrir
         y compartir tus impresiones sobre playas de todo tipo.
       </p>
+      <h2>Ultimas Opiniones</h2>
       {opiniones.map((opinion) => (
         <article className="noticia" key={opinion.id}>
           <h3>{opinion.titulo}</h3>
           <p>{opinion.text}</p>
-          <p>Id del usuario que creo la opinion: {opinion.user_id}</p>
+
           <p>user dio like: {opinion.id_usuario_like}</p>
-          <p>Cantidad de likes: {opinion.cantidad_likes}</p>
-          <p>Fecha de la opinion: {opinion.created_at}</p>
-          <p>Usuario que relaizo la opinion: {opinion.user_name}</p>
-          <p>id del usuario: {opinion.user_id}</p>
-          <p> id de la opinion: {opinion.opinion_id}</p>
-          <p>id guardado {id}</p>
+          <p>Likes: {opinion.cantidad_likes}</p>
+          <p>Fecha: {opinion.created_at}</p>
+          <p>Opinión creada por: {opinion.user_name}</p>
 
           {token &&
             (!opinion.id_usuario_like ? (

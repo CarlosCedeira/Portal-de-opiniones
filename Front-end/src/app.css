@@ -67,7 +67,7 @@ article {
   color: white;
 }
 footer a {
-  margin-left: 2rem;
+  margin-left: 1rem;
 }
 
 .noticia {
@@ -81,6 +81,9 @@ h1 {
   margin-left: 40px;
   font-size: x-large;
   text-decoration-line: none;
+}
+.text {
+  padding: 1rem;
 }
 h2,
 h3 {
