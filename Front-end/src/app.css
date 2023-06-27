@@ -14,8 +14,8 @@ html {
 body {
   margin-left: 10%;
   margin-right: 10%;
+  overflow: hidden;
 }
-
 
 main.app header {
   padding: 1.5rem;
@@ -34,7 +34,6 @@ header a {
   justify-content: space-between;
   align-items: center;
 }
-
 
 ul {
   list-style: none;
@@ -128,5 +127,55 @@ form button {
   transition: background-shadow 0.3s ease;
   cursor: pointer;
 }
+.app footer {
+  text-align: center;
+  color: white;
+}
+footer a {
+  margin-left: 1rem;
+}
+nav {
+  display: block;
+  height: 100%;
+}
 
+menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  height: 100%;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+
+menu {
+  display: flex;
+  list-style: none;
+  height: 100%;
+}
+
+li {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+li > a {
+  text-decoration: none;
+}
+
+footer img {
+  max-height: 2rem;
+}
+
+footer {
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-height: 2rem;
+    background-color: #000; /* Añade un color de fondo para mayor visibilidad */
+  }
+}
