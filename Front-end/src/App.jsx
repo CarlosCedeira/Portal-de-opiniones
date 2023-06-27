@@ -15,6 +15,7 @@ import { ActualizarPerfil } from "./Paginas/ActualizarPerfil";
 
 function App() {
   return (
+    <>
       <Header />
       <main className="app">
         <Routes>
