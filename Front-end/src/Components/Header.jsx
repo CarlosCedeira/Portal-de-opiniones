@@ -9,9 +9,7 @@ export const Header = () => {
   return (
     <header>
       <h1>
-        <Link to="/">
-          {usuario ? `Bienvenido ${usuario}` : `Portal de opinión`}
-        </Link>
+        <Link to="/">{usuario ? `Bienvenido ${usuario}` : `Bienvenido@`}</Link>
       </h1>
 
       <nav>
