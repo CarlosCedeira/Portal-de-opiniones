@@ -16,6 +16,7 @@ body {
   margin-right: 10%;
 }
 
+
 main.app header {
   padding: 1.5rem;
   display: flex;
@@ -34,10 +35,12 @@ header a {
   align-items: center;
 }
 
+
 ul {
   list-style: none;
   align-content: space-around;
 }
+
 div#root {
   min-height: 100vh;
   display: grid;
@@ -125,3 +128,5 @@ form button {
   transition: background-shadow 0.3s ease;
   cursor: pointer;
 }
+
+

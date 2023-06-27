@@ -1,6 +1,7 @@
 import "./app.css";
 
 import { Routes, Route } from "react-router-dom";
+import "./app.css";
 
 import { Header } from "./Components/Header";
 import { Footer } from "./Components/Footer";
@@ -14,7 +15,6 @@ import { ActualizarPerfil } from "./Paginas/ActualizarPerfil";
 
 function App() {
   return (
-    <>
       <Header />
       <main className="app">
         <Routes>
