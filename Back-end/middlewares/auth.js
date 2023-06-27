@@ -4,6 +4,7 @@ const { generateError } = require("../generateError");
 const authUser = (req, res, next) => {
   try {
     const { authorization } = req.headers;
+    console.log("req headers token", req.headers.authorization);
 
     if (!authorization) {
       throw generateError("falta autorizacion", 401);
