@@ -1,7 +1,11 @@
 import { useContext, useState } from "react";
 import { UseOpiniones } from "../Hooks/UseOpiniones";
 import { AuthContext } from "../Context/AuthContext";
-import { borrarOpiniones, likeOpiniones } from "../Peticiones/Peticiones";
+import {
+  borrarOpiniones,
+  cargarOpinionesConLike,
+  likeOpiniones,
+} from "../Peticiones/Peticiones";
 
 export const Inicio = () => {
   const { opiniones, setOpiniones, cargando, error } = UseOpiniones();
@@ -9,8 +13,6 @@ export const Inicio = () => {
 
   if (cargando) return <p>Cargando opiniones...</p>;
   if (error) return <p>{error}</p>;
-  console.log(token);
-  console.log(opiniones);
 
   const darLike = async (e) => {
     e.preventDefault();
@@ -18,8 +20,9 @@ export const Inicio = () => {
     console.log("id del target", eventoId);
 
     try {
-      const opinionesConLike = await likeOpiniones({ token, eventoId, id });
-      setOpiniones(opinionesConLike);
+      await likeOpiniones({ token, eventoId, id });
+      const opinionesLogin = await cargarOpinionesConLike(token);
+      setOpiniones(opinionesLogin);
     } catch (error) {
       console.log(error);
       //setError(error);
@@ -44,30 +47,41 @@ export const Inicio = () => {
 
   return (
     <>
-      <h2>Ultimas opiniones</h2>
+      <h2>Playas de Galicia</h2>
+      <p className="text">
+        En nuestro sitio, encontrarás un espacio dedicado a explorar y compartir
+        experiencias sobre diferentes playas de Galicia. Creemos en la
+        importancia de la comunidad y en el poder de las opiniones personales,
+        por lo que nuestro objetivo es brindarte un lugar donde puedas descubrir
+        y compartir tus impresiones sobre playas de todo tipo.
+      </p>
+      <h2>Ultimas Opiniones</h2>
       {opiniones.map((opinion) => (
         <article className="noticia" key={opinion.id}>
           <h3>{opinion.titulo}</h3>
-          <p>user id</p>
-          <p>{opinion.user_id}</p>
-          <p>user dio like</p>
-          <p>{opinion.id_usuario_like}</p>
           <p>{opinion.text}</p>
-          <p>cantidadlikes</p>
-          <p>{opinion.cantidad_likes}</p>
-          <p>{opinion.created_at}</p>
-          <p>{opinion.user_name}</p>
-          <p>{opinion.user_id}</p>
-          <p>{opinion.opinion_id}</p>
-          {opinion.user_id !== opinion.id_usuario_like ? (
-            <button id={opinion.id} onClick={(e) => darLike(e)}>
-              Like
-            </button>
-          ) : null}
+
+          <p>user dio like: {opinion.id_usuario_like}</p>
+          <p>Likes: {opinion.cantidad_likes}</p>
+          <p>Fecha: {opinion.created_at}</p>
+          <p>Opinión creada por: {opinion.user_name}</p>
+
+          {token &&
+            (!opinion.id_usuario_like ? (
+              <p id={opinion.id} onClick={(e) => darLike(e)}>
+                🤍
+              </p>
+            ) : (
+              <p>❤️</p>
+            ))}
           {id === opinion.user_id ? (
-            <button id={opinion.id} onClick={(e) => borrarOpinion(e)}>
-              Eliminar
-            </button>
+            <p
+              className="boton-borrado"
+              id={opinion.id}
+              onClick={(e) => borrarOpinion(e)}
+            >
+              ❌
+            </p>
           ) : null}
         </article>
       ))}

@@ -4,6 +4,8 @@ import { AuthContext } from "../Context/AuthContext";
 
 export const Autentificacion = () => {
   const { token } = useContext(AuthContext);
+
+  const CerrarSesion = () => {};
   return (
     <ul>
       {token ? (

@@ -31,6 +31,7 @@ const userLogin = async (req, res, next) => {
         id: user.id,
         usuario: user.user_name,
         email: user.email,
+        created_at: user.created_at,
       },
     });
   } catch (error) {

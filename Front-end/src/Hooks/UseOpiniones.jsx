@@ -6,7 +6,7 @@ import {
 } from "../Peticiones/Peticiones";
 
 export const UseOpiniones = () => {
-  const { token } = useContext(AuthContext);
+  const { token, id } = useContext(AuthContext);
   const [opiniones, setOpiniones] = useState([]);
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState("");
@@ -16,13 +16,15 @@ export const UseOpiniones = () => {
       try {
         setCargando(true);
         if (token) {
-          const data = await cargarOpinionesConLike(token);
+          console.log("use token", token);
+          const data = await cargarOpinionesConLike(token, id);
           setOpiniones(data);
           console.log("useestatedata true", data);
         } else {
           const data = await CargarOpiniones();
           setOpiniones(data);
           console.log("useestatedata false", data);
+          console.log("use token", token);
         }
       } catch (error) {
         setError(error.menssage);
