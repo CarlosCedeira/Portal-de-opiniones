@@ -46,7 +46,7 @@ export const Inicio = () => {
   };
 
   return (
-    <>
+    <
       <h2>Playas de Galicia</h2>
       <p className="text">
         En nuestro sitio, encontrarás un espacio dedicado a explorar y compartir

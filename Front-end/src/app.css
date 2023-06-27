@@ -39,6 +39,7 @@ ul {
   list-style: none;
   align-content: space-around;
 }
+
 div#root {
   min-height: 100vh;
   display: grid;
@@ -63,6 +64,13 @@ article {
   list-style: none;
   gap: 1rem;
 } */
+.app footer {
+  text-align: right;
+  color: white;
+}
+footer a {
+  margin-left: 1rem;
+}
 
 .noticia {
   border: 1px solid;
