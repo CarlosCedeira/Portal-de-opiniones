@@ -12,71 +12,12 @@ html {
 }
 
 body {
-  margin-left: 10%;
-  margin-right: 10%;
-  overflow: hidden;
-}
-
-main.app header {
-  padding: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
-  border: 1px solid rgb(110, 80, 45);
-}
-header a {
-  text-decoration-line: none;
-}
-.app header {
-  padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-ul {
-  list-style: none;
-  align-content: space-around;
-}
-
-div#root {
+  padding-right: 10%;
+  padding-left: 10%;
   min-height: 100vh;
   display: grid;
   gap: 1rem;
   grid-template-rows: auto 1fr auto;
-}
-
-article {
-  box-shadow: 5px 5px 10px 5px rgb(110, 80, 45);
-}
-
-.boton-borrado {
-  margin-left: 10px;
-  background: none;
-  position: relative;
-  bottom: 90%;
-  left: 97%;
-}
-
-/* .app header ul {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-} */
-.app footer {
-  text-align: right;
-  color: white;
-}
-footer a {
-  margin-left: 1rem;
-}
-
-.noticia {
-  border: 1px solid;
-  border-radius: 1rem;
-  padding: 1rem 2rem;
-  margin: 1rem;
 }
 
 h1 {
@@ -84,15 +25,48 @@ h1 {
   font-size: x-large;
   text-decoration-line: none;
 }
-.text {
-  padding: 1rem;
-}
+
 h2,
 h3 {
   display: grid;
   justify-content: center;
   margin-bottom: 1rem;
 }
+
+a {
+  text-decoration: none;
+}
+
+header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  align-content: space-around;
+} 
+
+article, form {
+  box-shadow: 5px 5px 10px 5px rgb(110, 80, 45);
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin: 1rem;
+}
+
+.boton-borrado {
+  margin-left: 10px;
+  position: relative;
+  top: -10rem;
+  left: 98%;
+}
+
+/* Estilos para formularios */
 
 form fieldset {
   border: none;
@@ -112,7 +86,7 @@ form input {
   margin-left: 10px;
   box-shadow: -1px -1px;
   border-radius: 3%;
-  background-color: rgb(198, 197, 197);
+  background-color: rgb(245, 214, 79);
 }
 
 form p {
@@ -123,59 +97,26 @@ form button {
   margin-left: 10px;
   font-size: medium;
   border-radius: 10px;
-  background-color: rgb(196, 231, 240);
+  background-color: rgb(245, 214, 79);
   transition: background-shadow 0.3s ease;
   cursor: pointer;
 }
-.app footer {
-  text-align: center;
-  color: white;
-}
-footer a {
-  margin-left: 1rem;
-}
-nav {
-  display: block;
-  height: 100%;
-}
 
-menu a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Estilos para el footer */
 
-  height: 100%;
-  width: 100%;
-  color: black;
-  text-align: center;
-}
-
-menu {
+footer ul {
   display: flex;
   list-style: none;
   height: 100%;
+  padding-top: 5rem;
+  padding-left: 15rem;
 }
 
-li {
+footer li {
   flex-grow: 1;
-  display: flex;
-  justify-content: center;
-}
-
-li > a {
-  text-decoration: none;
+  
 }
 
 footer img {
   max-height: 2rem;
-}
-
-footer {
-  footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    max-height: 2rem;
-    background-color: #000; /* Añade un color de fondo para mayor visibilidad */
-  }
 }

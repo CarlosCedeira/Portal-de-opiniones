@@ -23,31 +23,29 @@ export const FormularioNuevaOpinion = () => {
   };
 
   return (
-    <article>
-      <form onSubmit={handleForm}>
-        <fieldset>
-          <label htmlFor="tituloOpinion">Titulo Opinion</label>
-          <input
-            type="text"
-            name="tituloOpinion"
-            id="tituloOpinion"
-            required
-            placeholder={titulo}
-            onChange={(e) => setTitulo(e.target.value)}
-          />
-          <label htmlFor="textoOpinion">Texto de la Opinion</label>
-          <input
-            type="text"
-            name="textoOpinion"
-            id="textoOpinion"
-            required
-            placeholder={texto}
-            onChange={(e) => setTexto(e.target.value)}
-          />
-        </fieldset>
-        <button>Enviar opinion</button>
-        {error ? <p>{error.message}</p> : null}
-      </form>
-    </article>
+    <form onSubmit={handleForm}>
+      <fieldset>
+        <label htmlFor="tituloOpinion">Titulo Opinion</label>
+        <input
+          type="text"
+          name="tituloOpinion"
+          id="tituloOpinion"
+          required
+          placeholder={titulo}
+          onChange={(e) => setTitulo(e.target.value)}
+        />
+        <label htmlFor="textoOpinion">Texto de la Opinion</label>
+        <input
+          type="text"
+          name="textoOpinion"
+          id="textoOpinion"
+          required
+          placeholder={texto}
+          onChange={(e) => setTexto(e.target.value)}
+        />
+      </fieldset>
+      <button>Enviar opinion</button>
+      {error ? <p>{error.message}</p> : null}
+    </form>
   );
 };
