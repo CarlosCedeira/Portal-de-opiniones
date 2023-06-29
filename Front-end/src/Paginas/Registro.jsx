@@ -36,15 +36,6 @@ export const Registro = () => {
       <h2>Registro</h2>
       <form onSubmit={handleForm}>
         <fieldset>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
           <label htmlFor="usuario">Nombre de usuario:</label>
           <input
             type="text"
@@ -52,6 +43,15 @@ export const Registro = () => {
             id="usuario"
             required
             onChange={(e) => setUsername(e.target.value)}
+          />
+
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="passsword1">Contraseña:</label>

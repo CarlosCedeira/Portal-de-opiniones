@@ -69,10 +69,10 @@ export const ActualizarPerfil = () => {
             required
             onChange={(e) => setNuevaContraseña(e.target.value)}
           />
-
-          <button>Actualizar perfil</button>
-          <p>{error ? error : null}</p>
         </fieldset>
+
+        <button>Actualizar perfil</button>
+        <p>{error ? error : null}</p>
       </form>
     </>
   );
