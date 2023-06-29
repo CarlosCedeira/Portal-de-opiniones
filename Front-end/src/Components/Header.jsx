@@ -9,12 +9,10 @@ export const Header = () => {
   return (
     <header>
       <h1>
-        <Link to="/">{usuario ? `Bienvenido ${usuario}` : `Bienvenido@`}</Link>
+        <Link to="/">{usuario ? `Bienvenid@ ${usuario}` : `Bienvenid@`}</Link>
       </h1>
 
-      <nav>
-        <Autentificacion />
-      </nav>
+      <Autentificacion />
     </header>
   );
 };

@@ -7,7 +7,7 @@ export const Autentificacion = () => {
 
   const CerrarSesion = () => {};
   return (
-    <ul>
+    <nav>
       {token ? (
         <>
           <Link to="/opiniones">
@@ -27,6 +27,6 @@ export const Autentificacion = () => {
           </Link>
         </>
       )}
-    </ul>
+    </nav>
   );
 };
