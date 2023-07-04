@@ -61,7 +61,6 @@ export const Inicio = () => {
           <h3>{opinion.titulo}</h3>
           <p>{opinion.text}</p>
 
-          <p>user dio like: {opinion.id_usuario_like}</p>
           <p>Likes: {opinion.cantidad_likes}</p>
           <p>Fecha: {opinion.created_at}</p>
           <p>Opinión creada por: {opinion.user_name}</p>
