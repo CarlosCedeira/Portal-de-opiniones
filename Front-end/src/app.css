@@ -9,7 +9,7 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 #root {
@@ -30,7 +30,8 @@ h1 {
   display: block;
 }
 
-h2, h3 {
+h2,
+h3 {
   justify-content: center;
   margin-bottom: 1rem;
 }
@@ -51,24 +52,29 @@ header nav {
   list-style: none;
   gap: 1rem;
   align-content: space-around;
-} 
+}
 
-article, form {
+article,
+form {
   box-shadow: 5px 5px 10px 5px rgb(110, 80, 45);
   border: 1px solid;
   border-radius: 1rem;
   padding: 1rem 2rem;
   margin: 1rem 1rem;
 }
-
+article {
+  background-image: url(https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg);
+}
+form {
+  background-image: url(https://img.freepik.com/foto-gratis/hermosa-playa-tropical-mar-palmera-coco-isla-paradisiaca_74190-2206.jpg);
+}
 .boton-borrado {
-  margin-left: 10px;
   position: relative;
   top: -11rem;
   left: 98%;
   width: 1%;
+  padding: 1rem;
 }
-
 
 /* Estilos para formularios */
 
@@ -117,7 +123,6 @@ footer ul {
 
 footer li {
   flex-grow: 1;
-  
 }
 
 footer img {
