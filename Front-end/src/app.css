@@ -54,6 +54,13 @@ header nav {
   align-content: space-around;
 }
 
+article {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwDgwq5c6-mSC-20u8jagv1XSv_gGy8IgZjA&usqp=CAU");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
 article,
 form {
   box-shadow: 5px 5px 10px 5px rgb(110, 80, 45);
@@ -62,9 +69,7 @@ form {
   padding: 1rem 2rem;
   margin: 1rem 1rem;
 }
-article {
-  background-image: url(https://img.freepik.com/foto-gratis/fondo-mar-playa-vacio_74190-313.jpg);
-}
+  
 form {
   background-image: url(https://img.freepik.com/foto-gratis/hermosa-playa-tropical-mar-palmera-coco-isla-paradisiaca_74190-2206.jpg);
 }
@@ -77,6 +82,14 @@ form {
 }
 
 /* Estilos para formularios */
+
+form {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwDgwq5c6-mSC-20u8jagv1XSv_gGy8IgZjA&usqp=CAU");
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  
+}
 
 form fieldset {
   border: none;
@@ -96,7 +109,7 @@ form input {
   margin-left: 10px;
   box-shadow: -1px -1px;
   border-radius: 3%;
-  background-color: rgb(245, 214, 79);
+  background-color: rgb(233, 216, 141);
 }
 
 form p {
@@ -107,7 +120,7 @@ form button {
   margin-left: 10px;
   font-size: medium;
   border-radius: 10px;
-  background-color: rgb(245, 214, 79);
+  background-color: rgb(233, 216, 141);
   transition: background-shadow 0.3s ease;
   cursor: pointer;
 }
