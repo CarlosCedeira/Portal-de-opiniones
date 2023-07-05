@@ -33,8 +33,7 @@ export const FormularioNuevaOpinion = () => {
           onChange={(e) => setTitulo(e.target.value)}
         />
         <label htmlFor="textoOpinion">Texto de la Opinion</label>
-        <input
-          type="text"
+        <textarea
           name="textoOpinion"
           id="textoOpinion"
           required

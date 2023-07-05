@@ -24,6 +24,10 @@ main {
   padding-right: 3%;
 }
 
+main img {
+  padding: 2rem 2rem ;
+}
+
 h1 {
   font-size: x-large;
   text-decoration-line: none;
@@ -67,23 +71,51 @@ form {
   border: 1px solid;
   border-radius: 1rem;
   padding: 1rem 2rem;
-  margin: 1rem 1rem;
+  margin: 2rem 1rem;
 }
   
 form {
   background-image: url(https://img.freepik.com/foto-gratis/hermosa-playa-tropical-mar-palmera-coco-isla-paradisiaca_74190-2206.jpg);
 }
+
 .boton-borrado {
   position: relative;
-  top: -11rem;
+  top: -13rem;
   left: 98%;
   width: 1%;
   padding: 1rem;
 }
 
+.boton-borrado:hover {
+  cursor: pointer;
+}
+
 svg {
   width: 3rem;
 }
+
+svg:hover {
+  cursor: pointer;
+}
+
+#animado {
+  fill: red;
+  animation-name: animacion-like;
+  animation-duration: 2s;
+}
+
+@keyframes animacion-like {
+  0% {
+    fill: red;
+  }
+  50% {
+    fill: black;
+  }
+  100% {
+    fill: red;
+  }
+}
+
 /* Estilos para formularios */
 
 form {
@@ -106,13 +138,16 @@ form label {
   font-weight: bold;
 }
 
-form input {
+form input, form textarea {
   width: 90%;
   padding: 0.5rem;
   margin-left: 10px;
   box-shadow: -1px -1px;
-  border-radius: 3%;
   background-color: rgb(233, 216, 141);
+}
+
+form textarea {
+  height: 10rem;
 }
 
 form p {
