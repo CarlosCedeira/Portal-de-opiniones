@@ -6,7 +6,6 @@ import {
   cargarOpinionesConLike,
   likeOpiniones,
 } from "../Peticiones/Peticiones";
-import LikeButton from "../Components/likeButton";
 
 export const Inicio = () => {
   const { opiniones, setOpiniones, cargando, error } = UseOpiniones();
@@ -18,7 +17,6 @@ export const Inicio = () => {
   const darLike = async (e) => {
     e.preventDefault();
     const eventoId = +e.target.id;
-    console.log("id del target", eventoId);
 
     try {
       await likeOpiniones({ token, eventoId, id });
@@ -77,7 +75,20 @@ export const Inicio = () => {
                 🤍
               </p>
             ) : (
-              <p>❤️</p>
+              //<p>❤️</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="-2 -2 28 28"
+                fill="none"
+                stroke="black"
+                style={{
+                  strokeWidth: 2,
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                }}
+              >
+                <path d="M12 4.732c-4.87-7.868-12-4.4-12 3.732 0 4.056 3.806 6.176 12 14.536 8.194-8.36 12-10.48 12-14.536 0-8.132-7.13-11.6-12-3.732z" />
+              </svg>
             ))}
           {id === opinion.user_id ? (
             <p

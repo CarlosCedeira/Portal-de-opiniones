@@ -3,7 +3,6 @@ const { queryNewOpinion } = require("../queryOpinions/QuerynewOpinion");
 
 const newOpinionController = async (req, res, next) => {
   try {
-    console.log(req.body);
     const { titulo, texto } = req.body;
     const { id } = req.auth.id;
 

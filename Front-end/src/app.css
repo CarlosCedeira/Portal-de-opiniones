@@ -81,6 +81,9 @@ form {
   padding: 1rem;
 }
 
+svg {
+  width: 3rem;
+}
 /* Estilos para formularios */
 
 form {

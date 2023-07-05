@@ -31,7 +31,6 @@ export const LoginUsuario = async ({ username, email, password }) => {
     console.log(json.message);
     throw new Error(json.message);
   }
-  console.log("retorno de la peticion", json);
   return json.data;
 };
 
@@ -52,7 +51,6 @@ export const ActualizarPerfilPeticion = async ({
   });
 
   const json = await response.json();
-  console.log("peticion", json.respuestaNuevoUsuario);
 
   if (!response.ok) {
     console.log(json.message);
@@ -88,12 +86,10 @@ export const CargarOpiniones = async () => {
   if (!response.ok) {
     throw new Error(json.mensage);
   }
-  console.log(json.mensage);
   return json.message;
 };
 
 export const cargarOpinionesConLike = async (token) => {
-  console.log("cargaropinionesconlike", token);
   const response = await fetch("http://localhost:3000/opinion/id", {
     method: "GET",
     headers: {
@@ -102,10 +98,8 @@ export const cargarOpinionesConLike = async (token) => {
     },
   });
   const json = await response.json();
-  console.log("respuesta peticion", json);
 
   if (!response.ok) {
-    console.log(json.message);
     throw new Error(json.message);
   }
 
@@ -126,14 +120,11 @@ export const borrarOpiniones = async (token, eventoId) => {
   const json = await response.json();
 
   if (!response.ok) {
-    console.log(json.message);
     throw new Error(json.message);
   }
 };
 
 export const likeOpiniones = async ({ token, eventoId, id }) => {
-  console.log("peticiones");
-  console.log(token, eventoId, id);
   const response = await fetch("http://localhost:3000/opinion/like", {
     method: "POST",
     headers: {
@@ -143,10 +134,8 @@ export const likeOpiniones = async ({ token, eventoId, id }) => {
     body: JSON.stringify({ eventoId, id }),
   });
   const json = await response.json();
-  console.log("respuesta query", json);
 
   if (!response.ok) {
-    console.log(json.message);
     throw new Error(json.message);
   }
 

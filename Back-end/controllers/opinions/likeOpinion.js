@@ -5,8 +5,6 @@ const postLikeController = async (req, res, next) => {
   try {
     const { eventoId } = req.body;
     const { id } = req.auth.id;
-    console.log("idopinion controlador", eventoId);
-    console.log("id user controlador", id);
 
     await queryPosLike(eventoId, id);
 

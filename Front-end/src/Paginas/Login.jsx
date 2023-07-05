@@ -21,18 +21,14 @@ export const Login = () => {
         email,
         password,
       });
-      console.log("token", data);
       setToken(data.token);
       setId(data.id);
       setUsuario(data.usuario);
       setGuardarEmail(data.email);
       setFecha(data.created_at);
       setRespuesta(data.status);
-      console.log("data", data);
-      console.log("fecha", data.created_at);
       navigate("/");
     } catch (error) {
-      console.log("error", error);
       setError(error);
     }
   };

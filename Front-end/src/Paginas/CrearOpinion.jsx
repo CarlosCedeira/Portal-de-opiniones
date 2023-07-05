@@ -15,9 +15,7 @@ export const FormularioNuevaOpinion = () => {
     try {
       const data = await NuevaOpinion({ token, titulo, texto });
       navigate("/");
-      console.log(data);
     } catch (error) {
-      console.log(error);
       setError(error);
     }
   };
