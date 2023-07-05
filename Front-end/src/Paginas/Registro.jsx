@@ -13,8 +13,6 @@ export const Registro = () => {
   const handleForm = async (e) => {
     e.preventDefault();
     setError("");
-    console.log("informacion para la request");
-    console.log(username, password, email);
 
     if (password !== password2)
       setError("Las contraseñas introducidas no coiciden");
@@ -23,11 +21,8 @@ export const Registro = () => {
       await RegistroUsuario({ username, email, password });
       navigate("/login");
     } catch (error) {
-      console.log("error");
       setError(error.message);
     } finally {
-      console.log("registro usuario");
-      console.log(RegistroUsuario({ email, usuario, password }));
     }
   };
 

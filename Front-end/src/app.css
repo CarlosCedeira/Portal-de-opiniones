@@ -76,6 +76,9 @@ article, form {
   width: 1%;
 }
 
+svg {
+  width: 3rem;
+}
 /* Estilos para formularios */
 
 form {

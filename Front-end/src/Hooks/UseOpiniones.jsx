@@ -16,15 +16,11 @@ export const UseOpiniones = () => {
       try {
         setCargando(true);
         if (token) {
-          console.log("use token", token);
           const data = await cargarOpinionesConLike(token, id);
           setOpiniones(data);
-          console.log("useestatedata true", data);
         } else {
           const data = await CargarOpiniones();
           setOpiniones(data);
-          console.log("useestatedata false", data);
-          console.log("use token", token);
         }
       } catch (error) {
         setError(error.menssage);

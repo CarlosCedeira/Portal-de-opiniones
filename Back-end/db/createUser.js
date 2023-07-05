@@ -9,10 +9,10 @@ const queryNewUser = async (username, email, password) => {
     // Comprobar que no exista otro usuario con ese email
     const [user] = await connection.query(
       `SELECT id FROM users WHERE email = ?`,
-      [email, username]
+      [email]
     );
 
-    if (user.length > 0) {
+    if (user.length < 0) {
       throw generateError("User exist ", 409);
     }
     // Encriptar la password

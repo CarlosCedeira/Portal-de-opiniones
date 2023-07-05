@@ -1,7 +1,6 @@
 const { getConnection } = require("../../db/db");
 
 const queryOpinionsLogin = async (id) => {
-  console.log("id user query", id);
   let connection;
   try {
     // Crearon query para la opinion nueva
@@ -20,7 +19,6 @@ const queryOpinionsLogin = async (id) => {
       [id]
     );
 
-    console.log("respuesta query base de datos", userOpinion);
     return userOpinion;
 
     /*if (like.length > 0) {

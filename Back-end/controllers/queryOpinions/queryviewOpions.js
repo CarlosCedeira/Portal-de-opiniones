@@ -13,11 +13,6 @@ const queryViewOpinion = async () => {
       JOIN opinions ON users.id = opinions.user_id`
       //`SELECT titulo, text, created_at FROM opinions`
     );
-    console.log("ver opiniones", user);
-
-    if (Object.keys(user).length === 0) {
-      throw generateError("Sorry does not have opinions ", 409);
-    }
 
     return user;
   } finally {
