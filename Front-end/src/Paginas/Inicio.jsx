@@ -26,6 +26,9 @@ export const Inicio = () => {
       console.log(error);
       //setError(error);
     }
+    var elemento = e.target;
+    console.log(elemento);
+    elemento.classList.add("#animado");
   };
 
   const borrarOpinion = async (e) => {
@@ -71,11 +74,24 @@ export const Inicio = () => {
 
           {token &&
             (!opinion.id_usuario_like ? (
-              <p id={opinion.id} onClick={(e) => darLike(e)}>
-                🤍
-              </p>
+              <svg
+                onClick={(e) => darLike(e)}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="-2 -2 28 28"
+                fill="none"
+                stroke="black"
+                style={{
+                  strokeWidth: 2,
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round",
+                }}
+              >
+                <path
+                  id={opinion.id}
+                  d="M12 4.732c-4.87-7.868-12-4.4-12 3.732 0 4.056 3.806 6.176 12 14.536 8.194-8.36 12-10.48 12-14.536 0-8.132-7.13-11.6-12-3.732z"
+                />
+              </svg>
             ) : (
-              //<p>❤️</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="-2 -2 28 28"
