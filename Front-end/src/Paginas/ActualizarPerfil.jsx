@@ -30,7 +30,7 @@ export const ActualizarPerfil = () => {
 
   return (
     <>
-      <article>
+      <article className="details-user">
         <p>Nombre de usuaio: {usuario}</p>
         <p>Correo Electronico: {guardarEmail}</p>
         <p>Id: {id}</p>
