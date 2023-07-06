@@ -42,6 +42,7 @@ export const ActualizarPerfil = () => {
         <fieldset>
           <label htmlFor="nuevo-usuario">Nuevo usuario:</label>
           <input
+            autoComplete="off"
             type="text"
             name="nuevo-usuario"
             id="nuevo-usuario"
@@ -52,6 +53,7 @@ export const ActualizarPerfil = () => {
 
           <label htmlFor="nuevo-correo">Nuevo correo:</label>
           <input
+            autoComplete="off"
             type="email"
             name="nuevo-correo"
             id="nuevo-correo"
@@ -62,6 +64,7 @@ export const ActualizarPerfil = () => {
 
           <label htmlFor="nueva-contraseña">Nueva contraseña:</label>
           <input
+            autoComplete="off"
             type="password"
             name="nuevo-contraseña"
             id="nuevo-contraseña"

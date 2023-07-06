@@ -28,7 +28,7 @@ export const Inicio = () => {
     }
     var elemento = e.target;
     console.log(elemento);
-    elemento.classList.add("#animado");
+    elemento.classList.add("animado");
   };
 
   const borrarOpinion = async (e) => {

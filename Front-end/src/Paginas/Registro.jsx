@@ -33,6 +33,7 @@ export const Registro = () => {
         <fieldset>
           <label htmlFor="usuario">Nombre de usuario:</label>
           <input
+            autoComplete="off"
             type="text"
             name="usuario"
             id="usuario"
@@ -42,6 +43,7 @@ export const Registro = () => {
 
           <label htmlFor="email">Email:</label>
           <input
+            autoComplete="off"
             type="email"
             name="email"
             id="email"
@@ -51,6 +53,7 @@ export const Registro = () => {
 
           <label htmlFor="passsword1">Contraseña:</label>
           <input
+            autoComplete="off"
             type="password"
             name="passsword1"
             id="passsword1"
@@ -60,6 +63,7 @@ export const Registro = () => {
 
           <label htmlFor="passsword1">Repite contraseña</label>
           <input
+            autoComplete="off"
             type="password"
             name="passsword2"
             id="passsword2"

@@ -114,7 +114,7 @@ svg:hover {
   cursor: pointer;
 }
 
-#animado {
+.animado {
   fill: red;
   animation-name: animacion-like;
   animation-duration: 2s;
