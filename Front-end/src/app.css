@@ -5,7 +5,26 @@
 }
 
 html {
-  background-image: url("data:image/jpeg;base64,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");
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    180deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(55, 62, 253, 1) 0%,
+    rgba(175, 46, 159, 1) 0%,
+    rgba(146, 253, 29, 1) 0%,
+    rgba(35, 226, 76, 1) 0%,
+    rgba(180, 46, 139, 1) 0%,
+    rgba(163, 72, 51, 1) 0%,
+    rgba(160, 122, 51, 1) 0%,
+    rgba(159, 176, 141, 1) 0%,
+    rgba(123, 172, 81, 1) 0%,
+    rgba(249, 245, 245, 1) 0%,
+    rgba(173, 240, 242, 1) 10%,
+    rgba(163, 238, 238, 1) 19%,
+    rgba(122, 213, 213, 1) 34%,
+    rgba(149, 195, 131, 1) 47%,
+    rgba(237, 167, 24, 1) 66%
+  );
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
@@ -25,7 +44,7 @@ main {
 }
 
 main img {
-  padding: 2rem 2rem ;
+  padding: 2rem 2rem;
 }
 
 h1 {
@@ -34,14 +53,9 @@ h1 {
   display: block;
 }
 
-h2,
-h3 {
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
 a {
   text-decoration: none;
+  color: black;
 }
 
 header {
@@ -64,7 +78,9 @@ article {
   background-position: center;
   background-repeat: repeat;
 }
-
+.details-user {
+  font-weight: bold;
+}
 article,
 form {
   box-shadow: 5px 5px 10px 5px rgb(110, 80, 45);
@@ -73,9 +89,9 @@ form {
   padding: 1rem 2rem;
   margin: 2rem 1rem;
 }
-  
+
 form {
-  background-image: url(https://img.freepik.com/foto-gratis/hermosa-playa-tropical-mar-palmera-coco-isla-paradisiaca_74190-2206.jpg);
+  background-image: url(https://www.caldaria.es/wp-content/uploads/2019/07/playas-galicia.jpg);
 }
 
 .boton-borrado {
@@ -119,11 +135,11 @@ svg:hover {
 /* Estilos para formularios */
 
 form {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwDgwq5c6-mSC-20u8jagv1XSv_gGy8IgZjA&usqp=CAU");
+  background-image: url(https://www.caldaria.es/wp-content/uploads/2019/07/playas-galicia.jpg);
+
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
-  
 }
 
 form fieldset {
@@ -138,7 +154,8 @@ form label {
   font-weight: bold;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 90%;
   padding: 0.5rem;
   margin-left: 10px;
@@ -166,7 +183,6 @@ form button {
 /* Estilos para el footer */
 
 footer ul {
-  background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhIQEhIVFRUQDw8PDxUQFRAQFQ8PFREWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0NDw8PDysZFRkrKzcrKysrKy0rNzctLS0tKy0tKysrLTcrKysrLSsrKystLSsrKysrKysrKysrKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAYAAADAQEAAAAAAAAAAAAAAAAAAQIDB//EACQQAQEBAQACAQQCAwEAAAAAAAABAhESIVEDMUFhgZETceHx/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAECBQT/xAAXEQEBAQEAAAAAAAAAAAAAAAAAEQEh/9oADAMBAAIRAxEAPwDo3aLpXS1HMj3FnbTyZzK4B+Z+RcMQLzClOLwMuHR1UMdT5AuEV1PQOgLsX39i4ED+ypUkoeigCKD8ypCKvaQg9grqdAuVQ5QXl+jtFGtMrldhTXPwgeYWlW9Z6yBdadRNfJ2GKrv6CPOhQSJ6Lo5rrGKqQrDg1etIM1XE5ypBUPpSF1UPpWnE6A5VIzFgXStKiZA4mU6OIqkUdFEPFPSYfAEO7Lo4AsOVNouhVW9VGUqrsqHR5CBQ7lF0076Z6AvVHeLs59mWhT9UeNh5+xaoH0J8AoLByFaqSMKcOQ7r8CFQURVhcUB8HBwCtApAdpdPhAfS6UpgXQLYUoGQ9Dv6QV7SP5Hl8QDHZE9VP1P7UHun2J6P4A5Vek0pP5BpD5J7QXkC6XjCnRMgaNq8i1kGelfTnU2NPpwFdBG0jJcv6Hf0bCn4qkibD6oOgQgPpK4moFSnThgVhKHFC9jw/YvCtQHqJuz8PlXqAiSq8fmi7K5t/wCgVsg71Xhw7fgETPPyff8AY+/4Px+b/QF3+B3+R2Dz+AOf6/sT/Y8b+R6AvSpfgrv4TdUGnP2OxOM9X1Qr0rnn3LWk5zaB9+IL381d9M7YB+gjz/QBqY6XRDkNPTyB0qZWgOBKuIoLoAA+FIdoH6TrZdKZ6Cfd+yrj5qr6Z7oNPL4Td2oa31/X4BMzfz6P1/6i0gXfqDxqvHn2RrQHyD/Iyq/p5A50elW8R0FXRcTO/ZpMc+4Ca/EPlK6KKL8YV18HMfIt4CPG/k+SJ1o84Af5P2Gnj+iWAyKnKxECKpVA4dyWBrQDyTaVVMAWZ04r7ItA+po6VA1ZGYLUC2zXwbgrPrXH2RxX06YFYm/8a7jKwF4v4LUH01bEY1f0YOK+lBTrJrtnV0xPefb+Gme1My2zORApg/PnpFpcUVdFO084aWgmZ4nWxqosUFv7Cp9MA0kOwunERPC7xXSmegJU8+V8FATgugPFBNv/AFNaJoMpV4POWneQUrfwjvfsdPHpUOZTqHdJ+4JtXjP5POfyetAWqinRnHaA+nnq+QaRaA8uJv1Bzq5jiKj3Vf4+fc/IKg8k3VO1HegKrEGfp/K+irZ6otFiokYwuZVdCnyBHQqGOUcVKgnh9OCIELDKgOp1T8T8QRIqYO1FqC+pT42qmQLVT5LtZ6oBrJxGadzQPWma/EXQFnPyq6+E0+AU7T8fk+34Hj8qF58KS0+yFfqAPEW/gTNX6gI8bTmeDW0d6KvWkyU84bTPBCz9P5PVLWkbqha0me1TK84BMgaegsEyGAiDoHFQCmS4do5RStQvxHlxBPh8n6ibpPsFXaeqz9NfJEGUxaqfTh3SNaFXdIukVWfpgBM1pnHDuhCmPkek3aLegvW0XXR4qmRUzDWZkOJ1VQa0zuhaJkUuNMYPOVyiHLwrok1QujOTxlpQKQtaTrRYz1aDyNXIRVWUpkiDpzJXQBU4d0nxK8QFTcr6XjQRxchyC6ArUWqHgDOw84aTPB0E+MPo4qZBnopitfGFaQZ+MFqvHo8BUdVnJ+SPLoi7Uap+J/4wTMqV4wUEcqoDmAK05lc9J1oB34Tqlar6efyoWc/lWqdrO0UeQSAbUlcJEHS7T6ALh+h4nOKhT9Cyn5HALhch3I9AOlKfkm2inRMl0dBU5B5p4qZELqpkvIeQDVRc2tLC6io8ArhcAumcyPIC8R4q6m0DLyCplRHR4tC1oETCrpOqkDtJWcLk4oifRJqCFTYPH9gIg9HaABSdV4AAJSuwChQ/EADkhaABMyJQEUeSoAoPAcAQIAAcFvAEE6RABVRUAVD6OgNBDwAQHhDtAXApoWgAfkAGkf/Z");
   display: flex;
   list-style: none;
   height: 100%;
@@ -178,4 +194,45 @@ footer li {
 
 footer img {
   max-height: 2rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    margin-left: 2rem;
+  }
+  .noticia {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .details-user {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
+@media (min-width: 1024px) {
+  form {
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .details-user {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}
+@media (min-width: 1440px) {
+  form {
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  .details-user {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .noticia {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
 }
