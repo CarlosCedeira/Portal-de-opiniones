@@ -41,6 +41,7 @@ export const Login = () => {
         <fieldset>
           <label htmlFor="usuario">Usuario:</label>
           <input
+            autoComplete="off"
             type="text"
             name="usuario"
             id="usuario"
@@ -50,6 +51,7 @@ export const Login = () => {
 
           <label htmlFor="email">Email:</label>
           <input
+            autoComplete="off"
             type="email"
             name="email"
             id="email"
@@ -59,6 +61,7 @@ export const Login = () => {
 
           <label htmlFor="contraseña">Contraseña:</label>
           <input
+            autoComplete="off"
             type="password"
             name="contraseña"
             id="contraseña"

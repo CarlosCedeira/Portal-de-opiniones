@@ -25,6 +25,7 @@ export const FormularioNuevaOpinion = () => {
       <fieldset>
         <label htmlFor="tituloOpinion">Titulo Opinion</label>
         <input
+          autoComplete="off"
           type="text"
           name="tituloOpinion"
           id="tituloOpinion"
@@ -34,6 +35,7 @@ export const FormularioNuevaOpinion = () => {
         />
         <label htmlFor="textoOpinion">Texto de la Opinion</label>
         <textarea
+          autoComplete="off"
           name="textoOpinion"
           id="textoOpinion"
           required
