@@ -94,12 +94,26 @@ form {
   background-image: url(https://www.caldaria.es/wp-content/uploads/2019/07/playas-galicia.jpg);
 }
 
+.emogi-for-like {
+  cursor: pointer;
+  width: 1%;
+
+  position: relative;
+  left: 50%;
+}
+
+.emogi-liked {
+  width: 1%;
+
+  position: relative;
+  left: 50%;
+}
+
 .boton-borrado {
   position: relative;
-  top: -12rem;
-  left: 98%;
+  top: -9rem;
+  left: 100%;
   width: 1%;
-  padding: 1rem;
 }
 
 .boton-borrado:hover {
