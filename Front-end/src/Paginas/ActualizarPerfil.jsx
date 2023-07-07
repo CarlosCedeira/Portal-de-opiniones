@@ -9,7 +9,6 @@ export const ActualizarPerfil = () => {
   const [nuevoUsuario, setNuevoUsuario] = useState("Nuevo usuario");
   const [nuevoCorreo, setNuevoCorreo] = useState("Nuevo correo");
   const [nuevaContraseña, setNuevaContraseña] = useState("Nueva contraseña");
-  console.log("fecha", fecha);
 
   const handleForm = async (e) => {
     e.preventDefault();
